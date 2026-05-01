@@ -5809,8 +5809,8 @@ button {
 
 /* Reference-Match About Section Styles */
 .ref-about-section {
-  background: linear-gradient(to bottom, #bed2ba 0%, #edf1ec 40%, #ffffff 100%);
-  padding: 100px 8%;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 32%, #bed2ba 32%, #edf1ec 65%, #ffffff 100%);
+  padding: 0 8% 100px 8%;
   display: flex;
   flex-direction: column;
   gap: 80px;
