@@ -17,6 +17,7 @@ import FAQPage from './FAQPage'
 import SmartAssistantPage from './SmartAssistantPage'
 import ChatbotWidget from './ChatbotWidget'
 import MobileHomepage from './MobileHomepage'
+import InteractiveServices from './InteractiveServices'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
@@ -512,77 +513,7 @@ function App() {
         </div>
       </section>
       {/* 7. SERVICES SECTION */}
-      <section className="services-section">
-        <div className="services-header">
-          <span className="services-badge">Our Core Services</span>
-          <h2 className="services-title">Advanced Technological Solutions</h2>
-          <p className="services-subtitle-desc">
-            We deliver top-tier engineering services to help homes and enterprises stay connected, intelligent, and secure.
-          </p>
-        </div>
-
-        <div className="services-grid">
-          {/* IT Infrastructure */}
-          <div className="service-block">
-            <div className="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>
-            </div>
-            <h3 className="service-title-text">IT Infrastructure</h3>
-            <p className="service-short">Reliable network systems for modern businesses</p>
-            <div className="service-hidden">
-              Structured cabling • Servers • Data centers • Enterprise network systems
-            </div>
-          </div>
-
-          {/* Telecommunications */}
-          <div className="service-block">
-            <div className="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 0 0-7.38 16.72l-.71 1.99a1 1 0 0 0 1.34 1.25l2.43-.88A10 10 0 1 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3 className="service-title-text">Telecom Systems</h3>
-            <p className="service-short">Next-generation high-speed communication</p>
-            <div className="service-hidden">
-              Fiber optic installation • Wireless networks • Enterprise communication
-            </div>
-          </div>
-
-          {/* Security Systems */}
-          <div className="service-block">
-            <div className="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <h3 className="service-title-text">Security Systems</h3>
-            <p className="service-short">Full CCTV and surveillance monitoring</p>
-            <div className="service-hidden">
-              CCTV surveillance • Access control • Alarm systems • Real-time monitoring
-            </div>
-          </div>
-
-          {/* Smart Automation */}
-          <div className="service-block">
-            <div className="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3 className="service-title-text">Smart Automation</h3>
-            <p className="service-short">Intelligent control systems from one platform</p>
-            <div className="service-hidden">
-              Smart lighting • Climate control • Home security • Automated entertainment
-            </div>
-          </div>
-
-          {/* Fire Safety */}
-          <div className="service-block">
-            <div className="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.5 3.5 6.5 1 1.333 1 3 0 4.5-.5.75-1.5 1.5-2.5 1.5s-2-.75-2.5-1.5z"/><path d="M11 12c1.38 0 2.5 1.12 2.5 2.5a2.5 2.5 0 0 1-5 0c0-1.38 1.12-2.5 2.5-2.5z"/></svg>
-            </div>
-            <h3 className="service-title-text">Fire Safety</h3>
-            <p className="service-short">Advanced fire detection designed to protect lives</p>
-            <div className="service-hidden">
-              Advanced fire detection • Integrated alarm systems • Protection of lives
-            </div>
-          </div>
-        </div>
-      </section>
+      <InteractiveServices setCurrentPage={setCurrentPage} />
       {/* 8. WHY CHOOSE SECTION */}
 
       <section className="why-section">
