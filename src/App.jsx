@@ -16,9 +16,12 @@ import IndustriesPage from './IndustriesPage'
 import FAQPage from './FAQPage'
 import SmartAssistantPage from './SmartAssistantPage'
 import ChatbotWidget from './ChatbotWidget'
+import MobileHomepage from './MobileHomepage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
 
   React.useEffect(() => {
     let title = "COSMOTECH Project Ltd | Intelligent Technology Systems"
@@ -57,6 +60,72 @@ function App() {
 
   return (
     <div className="main-container">
+      {/* MOBILE ONLY HEADER (lg:hidden) */}
+      <div className="mob-header lg:hidden">
+        <div className="mob-header-inner">
+          <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); window.scrollTo(0, 0); }}>
+            <img src="/logo white.png" alt="COSMOTECH Logo" className="mob-logo-img" />
+          </a>
+          <button className="mob-menu-toggle-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle Menu">
+            {isMobileMenuOpen ? '✕' : '☰'}
+          </button>
+        </div>
+
+        {/* Sliding / Full-screen Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="mob-slide-menu">
+            <ul className="mob-nav-list">
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>Home</a>
+              </li>
+              <li>
+                <div className="mob-nav-accordion-trigger" onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}>
+                  <span>Services</span>
+                  <span>{isMobileServicesOpen ? '−' : '+'}</span>
+                </div>
+                {isMobileServicesOpen && (
+                  <ul className="mob-subnav-list">
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-it'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>IT Infrastructure</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-security'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Security Systems</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-automation'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Smart Automation</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-telecoms'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Telecommunications</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-fire'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Fire Detection</a></li>
+                  </ul>
+                )}
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>Projects</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>Industries</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('partners'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>Partners</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>About</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('process'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>How We Work</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('faq'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>FAQ</a>
+              </li>
+              <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>✨ Assistant</a>
+              </li>
+            </ul>
+            <div className="mob-nav-cta-wrapper">
+              <button className="mob-nav-cta-btn" onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+                Request Consultation
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* DESKTOP ONLY HEADERS (hidden lg:block) */}
+      <div className="hidden lg:block">
       {/* 1. TOP BAR */}
       <div className="top-bar">
         <div className="top-bar-left">
@@ -319,6 +388,8 @@ function App() {
 
       {currentPage === 'home' && (
         <>
+          <MobileHomepage setCurrentPage={setCurrentPage} />
+          <div className="hidden lg:block">
           {/* 4. HERO SECTION */}
           <section 
             className="hero" 
@@ -627,6 +698,7 @@ function App() {
 
         <div className="cta-contact-right" style={{ backgroundImage: `url('/monarch-hotel.jpg')` }}></div>
       </section>
+          </div>
         </>
       )}
 
@@ -697,68 +769,77 @@ function App() {
       {/* Persistent Chatbot & Quick Search Assistant */}
       <ChatbotWidget setCurrentPage={setCurrentPage} />
 
-      {/* Sticky Sidebar CTA */}
-      <div className="sticky-sidebar-cta">
-        <button className="sticky-cta-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-          Request Consultation
-        </button>
-      </div>
-
       {/* 11. FOOTER SECTION */}
-      <footer className="footer-section">
-        <div className="footer-top">
-          <div className="footer-logo-col">
-            <img src="/logo.png" alt="COSMOTECH Logo" className="footer-logo" />
-            <p className="footer-logo-desc">
-              At COSMOTECH Project Ltd, we are more than just a solutions provider, we are a key player in the market, manufacturing and delivering advanced systems for home & building automation.
-            </p>
-          </div>
-
-          <div className="footer-links-col">
-            <h4 className="footer-col-title">Our Solutions</h4>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-it'); window.scrollTo(0, 0); }}>Enterprise Network IT</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-security'); window.scrollTo(0, 0); }}>IT Security Systems</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-automation'); window.scrollTo(0, 0); }}>Smart Home Automation</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-telecoms'); window.scrollTo(0, 0); }}>Telecommunications</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-fire'); window.scrollTo(0, 0); }}>Fire Detection</a>
-          </div>
-
-          <div className="footer-links-col">
-            <h4 className="footer-col-title">Company Info</h4>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }}>Who We Are</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('process'); window.scrollTo(0, 0); }}>How We Work</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('partners'); window.scrollTo(0, 0); }}>Our Partners</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('faq'); window.scrollTo(0, 0); }}>Frequently Asked Questions</a>
-          </div>
-
-          <div className="footer-links-col">
-            <h4 className="footer-col-title">Sectors & Tools</h4>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>Industries Served</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>Our Portfolio</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); window.scrollTo(0, 0); }}>Smart Project Matcher</a>
-            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>Contact Us</a>
-          </div>
+      <div className="hidden lg:block">
+        {/* Sticky Sidebar CTA */}
+        <div className="sticky-sidebar-cta">
+          <button className="sticky-cta-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+            Request Consultation
+          </button>
         </div>
 
-        <div className="footer-bottom">
-          <span className="footer-copy">© 2026 COSMOTECH Project Ltd. All rights reserved.</span>
-          <div className="footer-bottom-right">
-            <span>Call us: +233 53 101 8219 / +233 54 550 8808</span>
-            <div className="footer-socials">
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </a>
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/></svg>
-              </a>
-              <a href="#">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </a>
+        <footer className="footer-section">
+          <div className="footer-top">
+            <div className="footer-logo-col">
+              <img src="/logo.png" alt="COSMOTECH Logo" className="footer-logo" />
+              <p className="footer-logo-desc">
+                At COSMOTECH Project Ltd, we are more than just a solutions provider, we are a key player in the market, manufacturing and delivering advanced systems for home & building automation.
+              </p>
+            </div>
+
+            <div className="footer-links-col">
+              <h4 className="footer-col-title">Our Solutions</h4>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-it'); window.scrollTo(0, 0); }}>Enterprise Network IT</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-security'); window.scrollTo(0, 0); }}>IT Security Systems</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-automation'); window.scrollTo(0, 0); }}>Smart Home Automation</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-telecoms'); window.scrollTo(0, 0); }}>Telecommunications</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-fire'); window.scrollTo(0, 0); }}>Fire Detection</a>
+            </div>
+
+            <div className="footer-links-col">
+              <h4 className="footer-col-title">Company Info</h4>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }}>Who We Are</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('process'); window.scrollTo(0, 0); }}>How We Work</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('partners'); window.scrollTo(0, 0); }}>Our Partners</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('faq'); window.scrollTo(0, 0); }}>Frequently Asked Questions</a>
+            </div>
+
+            <div className="footer-links-col">
+              <h4 className="footer-col-title">Sectors & Tools</h4>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>Industries Served</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>Our Portfolio</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); window.scrollTo(0, 0); }}>Smart Project Matcher</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>Contact Us</a>
             </div>
           </div>
-        </div>
+
+          <div className="footer-bottom">
+            <span className="footer-copy">© 2026 COSMOTECH Project Ltd. All rights reserved.</span>
+            <div className="footer-bottom-right">
+              <span>Call us: +233 53 101 8219 / +233 54 550 8808</span>
+              <div className="footer-socials">
+                <a href="#">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/></svg>
+                </a>
+                <a href="#">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <footer className="mob-footer lg:hidden">
+        <p className="mob-footer-copy">© 2026 COSMOTECH Project Ltd. All rights reserved.</p>
+        <p className="mob-footer-contact">Call us: +233 53 101 8219</p>
       </footer>
     </div>
+  )
+}
   )
 }
 

@@ -1,0 +1,212 @@
+import React, { useState } from 'react'
+
+export default function MobileHomepage({ setCurrentPage }) {
+  const [openAccordion, setOpenAccordion] = useState(null)
+
+  const toggleAccordion = (index) => {
+    if (openAccordion === index) {
+      setOpenAccordion(null)
+    } else {
+      setOpenAccordion(index)
+    }
+  }
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/233545508808', '_blank')
+  }
+
+  const handleCall = () => {
+    window.location.href = 'tel:+233531018219'
+  }
+
+  const mobileServices = [
+    {
+      title: 'IT Infrastructure',
+      desc: 'High-availability server deployments, network backbones, and enterprise firewalls.',
+      route: 'service-it'
+    },
+    {
+      title: 'Security Systems',
+      desc: 'Real-time surveillance, smart multi-zone alarms, and biometric access controls.',
+      route: 'service-security'
+    },
+    {
+      title: 'Smart Automation',
+      desc: 'Integrated convenience including smart climate, lighting, and entertainment.',
+      route: 'service-automation'
+    },
+    {
+      title: 'Telecommunications',
+      desc: 'Redundant communication paths, unified enterprise PBX, and fiber infrastructure.',
+      route: 'service-telecoms'
+    },
+    {
+      title: 'Fire Detection',
+      desc: 'Rapid hazard notification systems, addressable fire alarms, and continuous coverage.',
+      route: 'service-fire'
+    }
+  ]
+
+  return (
+    <div className="mobile-only-homepage lg:hidden">
+      {/* 1. HERO SECTION */}
+      <section className="mob-hero" style={{ backgroundImage: "linear-gradient(135deg, rgba(15, 34, 20, 0.85) 0%, rgba(15, 34, 20, 0.5) 100%), url('/1-01.webp')" }}>
+        <div className="mob-hero-content">
+          <span className="mob-badge-accent">Intelligent Systems</span>
+          <h1 className="mob-hero-title">Smart Technology Systems for Homes & Businesses</h1>
+          <p className="mob-hero-desc">
+            IT infrastructure, security, automation, telecoms, and fire safety solutions across Ghana.
+          </p>
+          <div className="mob-hero-ctas">
+            <button className="mob-cta-primary" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+              Request Consultation
+            </button>
+            <button className="mob-cta-whatsapp" onClick={handleWhatsApp}>
+              WhatsApp Us
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. QUICK ACTION STRIP */}
+      <section className="mob-quick-strip">
+        <h2 className="mob-strip-title">What do you need help with?</h2>
+        <div className="mob-strip-buttons">
+          <button onClick={() => setCurrentPage('service-security')}>🔒 Security</button>
+          <button onClick={() => setCurrentPage('service-it')}>📶 Networking</button>
+          <button onClick={() => setCurrentPage('service-automation')}>🏠 Smart Home</button>
+          <button onClick={() => setCurrentPage('service-telecoms')}>📞 Telecom</button>
+          <button onClick={() => setCurrentPage('service-fire')}>🔥 Fire Safety</button>
+        </div>
+      </section>
+
+      {/* 3. TRUST PROOF */}
+      <section className="mob-trust-proof">
+        <h2 className="mob-section-title">Trusted by leading organizations</h2>
+        <div className="mob-logos-grid">
+          <div className="mob-trust-logo">GOIL</div>
+          <div className="mob-trust-logo">Accra City Hotel</div>
+          <div className="mob-trust-logo">Blue Valley</div>
+          <div className="mob-trust-logo">Urban Apartments</div>
+        </div>
+        <button className="mob-view-projects-btn" onClick={() => setCurrentPage('projects')}>
+          View Our Projects &rarr;
+        </button>
+      </section>
+
+      {/* 4. SERVICES ACCORDION */}
+      <section className="mob-services-accordion-section">
+        <h2 className="mob-section-title">Our Core Services</h2>
+        <div className="mob-accordion-list">
+          {mobileServices.map((svc, idx) => (
+            <div key={idx} className={`mob-accordion-item ${openAccordion === idx ? 'open' : ''}`}>
+              <div className="mob-accordion-header" onClick={() => toggleAccordion(idx)}>
+                <span className="mob-accordion-title">{svc.title}</span>
+                <span className="mob-accordion-icon">{openAccordion === idx ? '−' : '+'}</span>
+              </div>
+              {openAccordion === idx && (
+                <div className="mob-accordion-body">
+                  <p className="mob-accordion-desc">{svc.desc}</p>
+                  <button className="mob-learn-more-btn" onClick={() => setCurrentPage(svc.route)}>
+                    Learn More &rarr;
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. WHY COSMOTECH */}
+      <section className="mob-why-section">
+        <h2 className="mob-section-title">Why COSMOTECH?</h2>
+        <div className="mob-why-rows">
+          <div className="mob-why-row">
+            <span className="mob-why-icon">⚙️</span>
+            <div>
+              <h3 className="mob-why-row-title">Engineering Expertise</h3>
+              <p className="mob-why-row-desc">High-end architecture from initial consultation to continuous maintenance.</p>
+            </div>
+          </div>
+          <div className="mob-why-row">
+            <span className="mob-why-icon">🔄</span>
+            <div>
+              <h3 className="mob-why-row-title">Integrated Technology Solutions</h3>
+              <p className="mob-why-row-desc">Harmonized systems ensuring flawless cross-device automation and security.</p>
+            </div>
+          </div>
+          <div className="mob-why-row">
+            <span className="mob-why-icon">🤝</span>
+            <div>
+              <h3 className="mob-why-row-title">Reliable Support</h3>
+              <p className="mob-why-row-desc">Ongoing technical support and dedicated project optimization teams.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FEATURED PROJECTS */}
+      <section className="mob-projects-section">
+        <h2 className="mob-section-title">Featured Projects</h2>
+        <div className="mob-projects-vertical">
+          <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/Accra-City-Hotel.png')" }} onClick={() => setCurrentPage('case-study-accra')}>
+            <h3 className="mob-proj-name">Accra City Hotel</h3>
+            <span className="mob-proj-cat">Security & Infrastructure</span>
+          </div>
+
+          <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/blue-valley.png')" }} onClick={() => setCurrentPage('case-study-blue-valley')}>
+            <h3 className="mob-proj-name">Blue Valley Hospital</h3>
+            <span className="mob-proj-cat">Healthcare Infrastructure</span>
+          </div>
+
+          <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/The Urban Apartments.png')" }} onClick={() => setCurrentPage('case-study-urban')}>
+            <h3 className="mob-proj-name">The Urban Apartments</h3>
+            <span className="mob-proj-cat">Smart Residential Systems</span>
+          </div>
+        </div>
+
+        <button className="mob-view-all-projects-btn" onClick={() => setCurrentPage('projects')}>
+          View All Projects
+        </button>
+      </section>
+
+      {/* 7. PARTNERS CREDIBILITY */}
+      <section className="mob-partners-section">
+        <h2 className="mob-section-title">Built with trusted technologies</h2>
+        <div className="mob-partners-2col">
+          <div className="mob-partner-card">Legrand</div>
+          <div className="mob-partner-card">Hikvision</div>
+          <div className="mob-partner-card">Vimar</div>
+          <div className="mob-partner-card">Schneider</div>
+        </div>
+      </section>
+
+      {/* 8. FINAL CTA */}
+      <section className="mob-final-cta">
+        <h2 className="mob-final-title">Ready to start your project?</h2>
+        <p className="mob-final-desc">Talk to COSMOTECH engineers today.</p>
+        <div className="mob-final-ctas">
+          <button className="mob-final-btn-primary" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+            Request Consultation
+          </button>
+          <button className="mob-final-btn-secondary" onClick={handleCall}>
+            Call Now
+          </button>
+        </div>
+      </section>
+
+      {/* STICKY BOTTOM CTA */}
+      <div className="mob-sticky-bottom-actions">
+        <button className="mob-stick-btn-call" onClick={handleCall}>
+          📞 Call
+        </button>
+        <button className="mob-stick-btn-wa" onClick={handleWhatsApp}>
+          💬 WhatsApp
+        </button>
+        <button className="mob-stick-btn-consult" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+          💡 Consult
+        </button>
+      </div>
+    </div>
+  )
+}
