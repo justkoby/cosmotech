@@ -463,36 +463,50 @@ function App() {
       </section>
       {/* 6. ABOUT SECTION */}
 
-      <section className="about-section">
-        <div className="about-left">
-          <span className="about-badge">About COSMOTECH</span>
-          <h2 className="about-title">Pioneering the Future of Technology Infrastructure</h2>
-          <p className="about-desc">
-            COSMOTECH PROJECT LTD is a technology integration company specializing in IT infrastructure, telecommunications systems, smart home automation, and electronic security solutions.
-          </p>
-          <p className="about-desc">
-            Our mission is to help homes, businesses, and institutions operate with secure, reliable, and intelligent technology systems.
-          </p>
-        </div>
-        
-        <div className="about-right">
-          <div className="about-card">
-            <h3 className="about-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              End-to-End Engineering Services
-            </h3>
-            <p className="about-card-desc">
-              We deliver complete engineering services from system design and installation to full integration and long-term technical support.
-            </p>
+      <section className="ref-about-section">
+        <div className="ref-about-cards">
+          <div className="ref-about-card">
+            <div className="ref-about-img-wrapper">
+              <img src="/end-to-end engineering-square.jpg" alt="End-to-End Engineering" className="ref-about-img" />
+            </div>
+            <div className="ref-about-card-text">
+              <div className="ref-about-card-header">
+                <h3 className="ref-about-card-title">End-to-End Engineering Services</h3>
+                <span className="ref-about-card-arrow">↗</span>
+              </div>
+              <p className="ref-about-card-desc">
+                We deliver complete engineering services from system design and installation to full integration and long-term technical support.
+              </p>
+            </div>
           </div>
 
-          <div className="about-card">
-            <h3 className="about-card-title">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              Smart & Secure Systems
-            </h3>
-            <p className="about-card-desc">
-              From secure home setups to high-end enterprise infrastructures, our solutions are highly durable and reliable.
+          <div className="ref-about-card">
+            <div className="ref-about-img-wrapper">
+              <img src="/smart-home-square.jpg" alt="Smart & Secure Systems" className="ref-about-img" />
+            </div>
+            <div className="ref-about-card-text">
+              <div className="ref-about-card-header">
+                <h3 className="ref-about-card-title">Smart & Secure Systems</h3>
+                <span className="ref-about-card-arrow">↗</span>
+              </div>
+              <p className="ref-about-card-desc">
+                From secure home setups to high-end enterprise infrastructures, our solutions are highly durable and reliable.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="ref-about-bottom">
+          <div className="ref-about-bottom-left">
+            <span className="ref-about-badge">About COSMOTECH</span>
+            <h2 className="ref-about-title">Pioneering the Future of Technology Infrastructure</h2>
+          </div>
+          <div className="ref-about-bottom-right">
+            <p className="ref-about-bottom-desc">
+              COSMOTECH PROJECT LTD is a technology integration company specializing in IT infrastructure, telecommunications systems, smart home automation, and electronic security solutions.
+            </p>
+            <p className="ref-about-bottom-desc">
+              Our mission is to help homes, businesses, and institutions operate with secure, reliable, and intelligent technology systems.
             </p>
           </div>
         </div>
