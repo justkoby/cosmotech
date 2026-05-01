@@ -384,7 +384,7 @@ function App() {
           </div>
         </nav>
       </div>
-
+      </div>
 
       {currentPage === 'home' && (
         <>
