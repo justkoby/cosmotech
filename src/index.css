@@ -6575,3 +6575,42 @@ button {
     z-index: 100000 !important;
   }
 }
+
+/* Consultation Page Styles */
+.consultation-main-section {
+  padding: 80px 10%;
+  background-color: #f8fafc;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.consult-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.consultation-form-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+@media (max-width: 1024px) {
+  .consultation-main-section {
+    padding: 40px 5%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .consult-form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .consultation-form-wrapper {
+    padding: 24px 16px;
+  }
+}

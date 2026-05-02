@@ -56,12 +56,12 @@ export default function ConsultationPage({ setCurrentPage }) {
       </section>
 
       {/* 2. FORM & INFO SECTION */}
-      <section className="form-info-section" style={{ padding: '80px 10%', backgroundColor: '#f8fafc', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '60px', alignItems: 'start' }}>
+      <section className="consultation-main-section">
         
         {/* Form Column */}
-        <div className="form-wrapper" style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '40px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.03)' }}>
+        <div className="consultation-form-wrapper">
           {isSubmitted ? (
-            <div className="form-success-state" style={{ textAlign: 'center', padding: '40px 20px' }}>
+            <div className="form-success-state" style={{ textAlign: 'center', padding: '20px' }}>
               <div style={{ width: '60px', height: '60px', backgroundColor: '#eefcf4', color: '#10b981', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px', margin: '0 auto 20px' }}>
                 ✓
               </div>
@@ -79,7 +79,7 @@ export default function ConsultationPage({ setCurrentPage }) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div className="form-group-flex" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="consult-form-grid">
                 <div className="form-field">
                   <label htmlFor="name" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '6px' }}>Full Name *</label>
                   <input 
@@ -108,7 +108,7 @@ export default function ConsultationPage({ setCurrentPage }) {
                 </div>
               </div>
 
-              <div className="form-group-flex" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="consult-form-grid">
                 <div className="form-field">
                   <label htmlFor="phone" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#475569', marginBottom: '6px' }}>Phone Number *</label>
                   <input 
