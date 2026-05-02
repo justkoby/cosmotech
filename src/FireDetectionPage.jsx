@@ -74,28 +74,28 @@ export default function FireDetectionPage({ setCurrentPage }) {
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#1e293b', marginBottom: '24px' }}>Our Approach</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>01</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#1</span>
               <div>
                 <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Assessment</h4>
                 <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Blueprint review & hazard mapping</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>02</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#2</span>
               <div>
                 <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Design</h4>
                 <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Compliant systems engineering</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>03</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#3</span>
               <div>
-                <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Installation</h4>
-                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Precision hardware & sensor setups</p>
+                <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Installation & Quality Control</h4>
+                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Precision hardware setups with strict quality control and assurance.</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>04</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#4</span>
               <div>
                 <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Support</h4>
                 <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Scheduled preventative checks</p>
@@ -108,10 +108,12 @@ export default function FireDetectionPage({ setCurrentPage }) {
         <section style={{ padding: '48px 20px', backgroundColor: '#ffffff' }}>
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#1e293b', marginBottom: '16px' }}>Applications</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Hotels</span>
-            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Offices</span>
             <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Industrial</span>
-            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Residential</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Offices</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Healthcare</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Hotels</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>High end Residential Properties</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Tertiary Institutions</span>
           </div>
         </section>
 
@@ -196,29 +198,63 @@ export default function FireDetectionPage({ setCurrentPage }) {
           </div>
           <div className="process-timeline-grid">
             <div className="timeline-step">
-              <div className="step-number">01</div>
+              <div className="step-number">#1</div>
               <h3 className="step-title">Risk Assessment</h3>
               <p className="step-desc">We thoroughly evaluate facility blueprints and map active fire vulnerabilities.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">02</div>
+              <div className="step-number">#2</div>
               <h3 className="step-title">System Design</h3>
               <p className="step-desc">We construction-engineer a compliant, fully functional fire detection system.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">03</div>
-              <h3 className="step-title">Installation</h3>
-              <p className="step-desc">Professional physical setup of smart sensors, panels, and alarms by our certified staff.</p>
+              <div className="step-number">#3</div>
+              <h3 className="step-title">Installation & Quality Control</h3>
+              <p className="step-desc">Professional physical setup of smart sensors, panels, and alarms with stringent quality control and assurance.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">04</div>
+              <div className="step-number">#4</div>
               <h3 className="step-title">Integration</h3>
               <p className="step-desc">Seamless connection of fire controls to security and general building management apps.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">05</div>
+              <div className="step-number">#5</div>
               <h3 className="step-title">Testing & Maintenance</h3>
               <p className="step-desc">Scheduled physical diagnostic checks to ensure uninterrupted responsive safety.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. WHERE THIS IS USED */}
+        <section className="service-applications-section">
+          <div className="services-section-header">
+            <h2 className="services-section-title centered">Applications</h2>
+            <p className="services-section-subtitle centered">Bringing reliable security across critical regional sectors.</p>
+          </div>
+          <div className="applications-grid">
+            <div className="app-block">
+              <div className="app-icon">🏭</div>
+              <h4 className="app-title">Industrial & Energy Facilities</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏢</div>
+              <h4 className="app-title">Corporate Offices & Business Facilities</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏥</div>
+              <h4 className="app-title">Healthcare Institutions</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏨</div>
+              <h4 className="app-title">Hotels & Hospitality Environments</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏠</div>
+              <h4 className="app-title">High end Residential Properties</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🎓</div>
+              <h4 className="app-title">Tertiary Institutions</h4>
             </div>
           </div>
         </section>

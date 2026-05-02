@@ -117,28 +117,28 @@ export default function ServicesPage({ setCurrentPage }) {
           <h2 style={{ fontSize: '24px', fontWeight: 700, color: '#1e293b', marginBottom: '24px' }}>How It Works</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>01</span>
+              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>#1</span>
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: '0 0 4px 0' }}>Consultation</h4>
                 <p style={{ fontSize: '14px', color: '#475569', margin: 0 }}>Listen to understand your technical & operational needs.</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>02</span>
+              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>#2</span>
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: '0 0 4px 0' }}>Design</h4>
                 <p style={{ fontSize: '14px', color: '#475569', margin: 0 }}>Custom-engineer optimal system architecture.</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>03</span>
+              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>#3</span>
               <div>
-                <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: '0 0 4px 0' }}>Installation</h4>
-                <p style={{ fontSize: '14px', color: '#475569', margin: 0 }}>Precise field deployment, validation, and testing.</p>
+                <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: '0 0 4px 0' }}>Installation & Quality Control</h4>
+                <p style={{ fontSize: '14px', color: '#475569', margin: 0 }}>Precise field deployment with strict quality control & assurance.</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>04</span>
+              <span style={{ fontSize: '16px', fontWeight: 700, backgroundColor: '#0c1b10', color: '#ffffff', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', flexShrink: 0 }}>#4</span>
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: '0 0 4px 0' }}>Support</h4>
                 <p style={{ fontSize: '14px', color: '#475569', margin: 0 }}>Continuous preventive maintenance and optimization.</p>
@@ -335,22 +335,22 @@ export default function ServicesPage({ setCurrentPage }) {
           </div>
           <div className="process-timeline-grid">
             <div className="timeline-step">
-              <div className="step-number">01</div>
+              <div className="step-number">#1</div>
               <h3 className="step-title">Consultation</h3>
               <p className="step-desc">We listen intently to completely understand your technological and operational needs.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">02</div>
+              <div className="step-number">#2</div>
               <h3 className="step-title">Design</h3>
               <p className="step-desc">Our expert team custom-engineers the optimal technical system architecture.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">03</div>
-              <h3 className="step-title">Installation</h3>
-              <p className="step-desc">Professional and precise field deployment, testing, and system commissioning.</p>
+              <div className="step-number">#3</div>
+              <h3 className="step-title">Installation & Quality Control</h3>
+              <p className="step-desc">Professional and precise field deployment with stringent quality control & assurance.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">04</div>
+              <div className="step-number">#4</div>
               <h3 className="step-title">Support</h3>
               <p className="step-desc">Sustained preventative maintenance and full ongoing optimization support.</p>
             </div>

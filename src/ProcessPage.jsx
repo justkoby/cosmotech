@@ -31,27 +31,27 @@ export default function ProcessPage({ setCurrentPage }) {
         </div>
         <div className="horizontal-process-timeline">
           <div className="timeline-segment">
-            <div className="timeline-node">01</div>
+            <div className="timeline-node">#1</div>
             <h4 className="timeline-label">Consultation</h4>
           </div>
           <div className="timeline-segment">
-            <div className="timeline-node">02</div>
+            <div className="timeline-node">#2</div>
             <h4 className="timeline-label">Site Assessment</h4>
           </div>
           <div className="timeline-segment">
-            <div className="timeline-node">03</div>
+            <div className="timeline-node">#3</div>
             <h4 className="timeline-label">System Design</h4>
           </div>
           <div className="timeline-segment">
-            <div className="timeline-node">04</div>
+            <div className="timeline-node">#4</div>
             <h4 className="timeline-label">Installation</h4>
           </div>
           <div className="timeline-segment">
-            <div className="timeline-node">05</div>
+            <div className="timeline-node">#5</div>
             <h4 className="timeline-label">Integration</h4>
           </div>
           <div className="timeline-segment">
-            <div className="timeline-node">06</div>
+            <div className="timeline-node">#6</div>
             <h4 className="timeline-label">Support</h4>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function ProcessPage({ setCurrentPage }) {
       <section className="process-details-section">
         <div className="process-step-block">
           <div className="step-content-col">
-            <span className="step-index">Step 01</span>
+            <span className="step-index">#1</span>
             <h2 className="step-main-title">Consultation</h2>
             <p className="step-body-desc">
               We begin by understanding your project goals, environment, budget, and technical requirements. This allows our team to outline exactly how technology can improve your operational workflows or everyday lifestyle.
@@ -72,7 +72,7 @@ export default function ProcessPage({ setCurrentPage }) {
 
         <div className="process-step-block reverse">
           <div className="step-content-col">
-            <span className="step-index">Step 02</span>
+            <span className="step-index">#2</span>
             <h2 className="step-main-title">Site Assessment</h2>
             <p className="step-body-desc">
               Our team thoroughly evaluates your physical space, existing infrastructure, risks, and performance limitations. This prevents unneeded surprises during physical deployment.
@@ -83,7 +83,7 @@ export default function ProcessPage({ setCurrentPage }) {
 
         <div className="process-step-block">
           <div className="step-content-col">
-            <span className="step-index">Step 03</span>
+            <span className="step-index">#3</span>
             <h2 className="step-main-title">System Design</h2>
             <p className="step-body-desc">
               We develop a tailored, compliant system architecture covering advanced equipment choice, placement, network integration, scalability, and bandwidth limit planning.
@@ -94,10 +94,10 @@ export default function ProcessPage({ setCurrentPage }) {
 
         <div className="process-step-block reverse">
           <div className="step-content-col">
-            <span className="step-index">Step 04</span>
-            <h2 className="step-main-title">Installation</h2>
+            <span className="step-index">#4</span>
+            <h2 className="step-main-title">Installation & Quality Control</h2>
             <p className="step-body-desc">
-              Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations.
+              Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations. We maintain stringent quality control and assurance at every phase of deployment.
             </p>
           </div>
           <div className="step-visual-col" style={{ backgroundImage: `url('/Anfield Residence.jpg')` }}></div>
@@ -105,7 +105,7 @@ export default function ProcessPage({ setCurrentPage }) {
 
         <div className="process-step-block">
           <div className="step-content-col">
-            <span className="step-index">Step 05</span>
+            <span className="step-index">#5</span>
             <h2 className="step-main-title">Integration & Testing</h2>
             <p className="step-body-desc">
               We connect all technology components into one working system and test performance, reliability, and usability end-to-end.
@@ -116,7 +116,7 @@ export default function ProcessPage({ setCurrentPage }) {
 
         <div className="process-step-block reverse">
           <div className="step-content-col">
-            <span className="step-index">Step 06</span>
+            <span className="step-index">#6</span>
             <h2 className="step-main-title">Support & Maintenance</h2>
             <p className="step-body-desc">
               After completion, we provide ongoing support, preventative testing, hardware checks, and continuous technical assistance.

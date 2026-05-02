@@ -12,7 +12,8 @@ export default function SmartAutomationPage({ setCurrentPage }) {
     { id: 2, title: 'Climate Control', desc: 'Automate localized temperatures for ultimate personal comfort.' },
     { id: 3, title: 'Automated Curtains', desc: 'Scheduled motorized sunlight exposure and room privacy.' },
     { id: 4, title: 'Home Security Integration', desc: 'Consolidate alarm alerts and cameras into a single dashboard.' },
-    { id: 5, title: 'Entertainment Control', desc: 'Whole-house audio distributions and customized media rooms.' }
+    { id: 5, title: 'Entertainment Control', desc: 'Whole-house audio distributions and customized media rooms.' },
+    { id: 6, title: 'KNX Systems', desc: 'Robust, scalable, and future-proof automation standard with open protocol.' }
   ]
 
   return (
@@ -74,28 +75,28 @@ export default function SmartAutomationPage({ setCurrentPage }) {
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#1e293b', marginBottom: '24px' }}>Our Roadmap</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>01</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#1</span>
               <div>
                 <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Consultation</h4>
                 <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Design aligned to lifestyle needs</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>02</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#2</span>
               <div>
                 <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Integration</h4>
                 <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Custom engineering without complexity</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>03</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#3</span>
               <div>
-                <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Installation</h4>
-                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>High-fidelity setup by expert technicians</p>
+                <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Installation & Quality Control</h4>
+                <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>High-fidelity setup by expert technicians with strict quality control and assurance.</p>
               </div>
             </div>
             <div style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ fontWeight: 700, color: '#5c7853' }}>04</span>
+              <span style={{ fontWeight: 700, color: '#5c7853' }}>#4</span>
               <div>
                 <h4 style={{ margin: '0 0 2px 0', fontSize: '15px', color: '#1e293b', fontWeight: 700 }}>Support</h4>
                 <p style={{ margin: 0, fontSize: '13px', color: '#64748b' }}>Continuous system software upgrades</p>
@@ -108,10 +109,12 @@ export default function SmartAutomationPage({ setCurrentPage }) {
         <section style={{ padding: '48px 20px', backgroundColor: '#ffffff' }}>
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#1e293b', marginBottom: '16px' }}>Applications</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Luxury Homes</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Industrial</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Offices</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Healthcare</span>
             <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Hotels</span>
-            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Apartments</span>
-            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Premium Offices</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>High end Residential Properties</span>
+            <span style={{ backgroundColor: '#f1f5f9', color: '#334155', padding: '6px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 600 }}>Tertiary Institutions</span>
           </div>
         </section>
 
@@ -188,6 +191,23 @@ export default function SmartAutomationPage({ setCurrentPage }) {
           </div>
         </section>
 
+        {/* KNX Systems Showcase */}
+        <section className="service-overview-block" style={{ backgroundColor: '#f8fafc', padding: '80px 0' }}>
+          <div className="service-overview-inner" style={{ display: 'flex', gap: '48px', alignItems: 'center' }}>
+            <div className="overview-image" style={{ backgroundImage: `url('/knx-technology.jpeg')`, minHeight: '380px', flex: 1, backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '12px', boxShadow: '0 12px 36px rgba(0,0,0,0.1)' }}></div>
+            <div className="overview-text" style={{ flex: 1 }}>
+              <span className="overview-badge" style={{ backgroundColor: '#0c1b10', color: '#ffffff', padding: '6px 14px', borderRadius: '4px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>Premium Standard</span>
+              <h2 className="overview-title" style={{ fontSize: '32px', fontWeight: 800, color: '#0f172a', margin: '16px 0 20px 0', lineHeight: 1.2 }}>KNX Technology Integration</h2>
+              <p className="overview-desc" style={{ fontSize: '15.5px', color: '#475569', lineHeight: 1.7, marginBottom: '20px' }}>
+                KNX technology is a robust, scalable, and future-proof automation standard that empowers developers and builders to deliver intelligent, energy-efficient, and high-value residential and industrial buildings.
+              </p>
+              <p className="overview-desc" style={{ fontSize: '15.5px', color: '#475569', lineHeight: 1.7 }}>
+                Its open protocol, reliability, and flexibility make it the preferred choice for modern smart home and smart building solutions worldwide.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* 5. HOW IT WORKS */}
         <section className="service-process-section">
           <div className="services-section-header">
@@ -196,29 +216,63 @@ export default function SmartAutomationPage({ setCurrentPage }) {
           </div>
           <div className="process-timeline-grid">
             <div className="timeline-step">
-              <div className="step-number">01</div>
+              <div className="step-number">#1</div>
               <h3 className="step-title">Consultation</h3>
               <p className="step-desc">We listen intently to match solutions to your unique everyday lifestyle and environment.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">02</div>
+              <div className="step-number">#2</div>
               <h3 className="step-title">System Design</h3>
               <p className="step-desc">Our technical designers create a seamless, non-intrusive automation plan.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">03</div>
-              <h3 className="step-title">Installation & Setup</h3>
-              <p className="step-desc">Expert in-wall and ceiling setups by highly skilled local installation specialists.</p>
+              <div className="step-number">#3</div>
+              <h3 className="step-title">Installation & Quality Control</h3>
+              <p className="step-desc">Expert in-wall and ceiling setups by local installation specialists with strict quality control and assurance.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">04</div>
+              <div className="step-number">#4</div>
               <h3 className="step-title">Centralized Control</h3>
               <p className="step-desc">We consolidate all connected devices into a single, straightforward control app or dashboard.</p>
             </div>
             <div className="timeline-step">
-              <div className="step-number">05</div>
+              <div className="step-number">#5</div>
               <h3 className="step-title">Support & Upgrades</h3>
               <p className="step-desc">Ongoing technical tune-ups and system software upgrades for continued efficiency.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. WHERE THIS IS USED */}
+        <section className="service-applications-section">
+          <div className="services-section-header">
+            <h2 className="services-section-title centered">Applications</h2>
+            <p className="services-section-subtitle centered">Bringing reliable security across critical regional sectors.</p>
+          </div>
+          <div className="applications-grid">
+            <div className="app-block">
+              <div className="app-icon">🏭</div>
+              <h4 className="app-title">Industrial & Energy Facilities</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏢</div>
+              <h4 className="app-title">Corporate Offices & Business Facilities</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏥</div>
+              <h4 className="app-title">Healthcare Institutions</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏨</div>
+              <h4 className="app-title">Hotels & Hospitality Environments</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🏠</div>
+              <h4 className="app-title">High end Residential Properties</h4>
+            </div>
+            <div className="app-block">
+              <div className="app-icon">🎓</div>
+              <h4 className="app-title">Tertiary Institutions</h4>
             </div>
           </div>
         </section>

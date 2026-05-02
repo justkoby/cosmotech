@@ -26,6 +26,30 @@ function App() {
   })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
+
+  React.useEffect(() => {
+    if (!window.history.state || !window.history.state.page) {
+      window.history.replaceState({ page: currentPage }, '', '')
+    }
+
+    const handlePopState = (event) => {
+      if (event.state && event.state.page) {
+        setCurrentPage(event.state.page)
+      } else {
+        setCurrentPage('home')
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  React.useEffect(() => {
+    if (window.history.state && window.history.state.page !== currentPage) {
+      window.history.pushState({ page: currentPage }, '', '')
+    }
+  }, [currentPage])
+
   React.useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
