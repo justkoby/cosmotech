@@ -126,7 +126,7 @@ export default function ITInfrastructurePage({ setCurrentPage }) {
               <p style={{ margin: 0, fontSize: '12px', opacity: 0.85 }}>Corporate Network Systems</p>
             </div>
             <div style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.75)), url('/blue-valley.png')", backgroundSize: 'cover', backgroundPosition: 'center', height: '160px', borderRadius: '8px', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', color: '#ffffff' }} onClick={() => { setCurrentPage('projects'); window.scrollTo(0, 0); }}>
-              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>Blue Valley Hospital</h4>
+              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>Blue Valley Specialist Hospital</h4>
               <p style={{ margin: 0, fontSize: '12px', opacity: 0.85 }}>Healthcare Infrastructure</p>
             </div>
           </div>

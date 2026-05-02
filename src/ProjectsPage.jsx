@@ -13,7 +13,7 @@ export default function ProjectsPage({ setCurrentPage }) {
   const projects = [
     {
       id: 'accra-city-hotel',
-      name: 'Accra City Hotel',
+      name: 'Accra City Phase 2',
       category: 'Hospitality',
       shortDesc: 'Complete security surveillance and advanced infrastructure integration.',
       longDesc: 'Complete deployment of integrated security and infrastructure systems for a prominent high-traffic hospitality environment in Accra, Ghana.',
@@ -28,7 +28,7 @@ export default function ProjectsPage({ setCurrentPage }) {
     },
     {
       id: 'blue-valley',
-      name: 'Blue Valley Hospital',
+      name: 'Blue Valley Specialist Hospital',
       category: 'Healthcare',
       shortDesc: 'Secure intelligent infrastructure and high-speed data networks.',
       longDesc: 'Specialized technology integration providing secure network backbones and physical access controls for a modern multi-facility medical center.',
@@ -151,6 +151,9 @@ export default function ProjectsPage({ setCurrentPage }) {
                   if (proj.id === 'accra-city-hotel') setCurrentPage('case-study-accra')
                   else if (proj.id === 'blue-valley') setCurrentPage('case-study-blue-valley')
                   else if (proj.id === 'the-urban-apartments') setCurrentPage('case-study-urban')
+                  else if (proj.id === 'goil-plc') setCurrentPage('case-study-goil')
+                  else if (proj.id === 'anfield-residence') setCurrentPage('case-study-anfield')
+                  else if (proj.id === 'koan-energy') setCurrentPage('case-study-koan')
                   else setSelectedProject(proj)
                 }}
               >
@@ -171,9 +174,9 @@ export default function ProjectsPage({ setCurrentPage }) {
           <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', marginBottom: '16px', textAlign: 'center' }}>Trusted by Leading Organizations</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '6px', textAlign: 'center', fontSize: '12px', fontWeight: 600, color: '#475569' }}>GOIL PLC</div>
-            <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '6px', textAlign: 'center', fontSize: '12px', fontWeight: 600, color: '#475569' }}>Accra City Hotel</div>
+            <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '6px', textAlign: 'center', fontSize: '12px', fontWeight: 600, color: '#475569' }}>Accra City Phase 2</div>
             <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '6px', textAlign: 'center', fontSize: '12px', fontWeight: 600, color: '#475569' }}>KOAN Energy</div>
-            <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '6px', textAlign: 'center', fontSize: '12px', fontWeight: 600, color: '#475569' }}>Blue Valley</div>
+            <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '6px', textAlign: 'center', fontSize: '12px', fontWeight: 600, color: '#475569' }}>Blue Valley Specialist Hospital</div>
           </div>
         </section>
 
@@ -232,6 +235,12 @@ export default function ProjectsPage({ setCurrentPage }) {
                     setCurrentPage('case-study-blue-valley');
                   } else if (proj.id === 'the-urban-apartments') {
                     setCurrentPage('case-study-urban');
+                  } else if (proj.id === 'goil-plc') {
+                    setCurrentPage('case-study-goil');
+                  } else if (proj.id === 'anfield-residence') {
+                    setCurrentPage('case-study-anfield');
+                  } else if (proj.id === 'koan-energy') {
+                    setCurrentPage('case-study-koan');
                   } else {
                     setSelectedProject(proj);
                   }
@@ -258,8 +267,8 @@ export default function ProjectsPage({ setCurrentPage }) {
             <div className="client-logo-card">GOIL PLC</div>
             <div className="client-logo-card">GOBITUMEN</div>
             <div className="client-logo-card">KOAN Energy</div>
-            <div className="client-logo-card">Accra City Hotel</div>
-            <div className="client-logo-card">Blue Valley Hospital</div>
+            <div className="client-logo-card">Accra City Phase 2</div>
+            <div className="client-logo-card">Blue Valley Specialist Hospital</div>
           </div>
         </section>
 

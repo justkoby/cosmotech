@@ -37,7 +37,7 @@ export default function ChatbotWidget({ setCurrentPage }) {
       } else if (lowerText.includes('network') || lowerText.includes('it') || lowerText.includes('fiber')) {
         botResponse = "COSMOTECH designs extremely high-availability enterprise network infrastructures. We cover Cat6 cabling, fiber optic splicing, server integration, and managed Wi-Fi points."
       } else if (lowerText.includes('hotel') || lowerText.includes('hospitality')) {
-        botResponse = "For hospitality clients like Accra City Hotel, we deploy seamless Wi-Fi coverage, security surveillance systems, and integrated access points. View our dedicated Industries sector page."
+        botResponse = "For hospitality clients like Accra City Phase 2, we deploy seamless Wi-Fi coverage, security surveillance systems, and integrated access points. View our dedicated Industries sector page."
       } else if (lowerText.includes('home') || lowerText.includes('automation') || lowerText.includes('vimar')) {
         botResponse = "We specialize in high-end premium smart home automation combining lighting, home climate, and entertainment control in partnership with Vimar & Legrand."
       } else if (lowerText.includes('fire') || lowerText.includes('detection')) {

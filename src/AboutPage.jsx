@@ -9,8 +9,8 @@ export default function AboutPage({ setCurrentPage }) {
     { name: 'GOBITUMEN', img: '/GOBITUMEN.png' },
     { name: 'APAL Developers', img: '/APAL Developers.png' },
     { name: 'KOAN Energy', img: '/koan.png' },
-    { name: 'Blue Valley', img: '/blue-valley.png' },
-    { name: 'Accra City Hotel', img: '/Accra City Hotel.jpg' },
+    { name: 'Blue Valley Specialist Hospital', img: '/blue-valley.png' },
+    { name: 'Accra City Phase 2', img: '/Accra City Hotel.jpg' },
     { name: 'The Urban Apartments', img: '/The Urban Apartments.png' },
     { name: 'Iris Apartments', img: '/iris-apartment.png' },
     { name: 'Hope Wells Hotel Plaza', img: '/Hope Wells Hotel Plaza.png' }

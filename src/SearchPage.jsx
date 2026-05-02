@@ -74,10 +74,10 @@ export default function SearchPage({ setCurrentPage }) {
     },
     {
       id: 'case-study-accra',
-      title: 'Accra City Hotel',
+      title: 'Accra City Phase 2',
       category: 'Projects',
-      description: 'Detailed view of our advanced security, network infrastructure, and smart technology deployment at Accra City Hotel.',
-      keywords: 'accra city hotel hospitality security cctv access control wifi internet corporate'
+      description: 'Detailed view of our advanced security, network infrastructure, and smart technology deployment at Accra City Phase 2.',
+      keywords: 'accra city phase 2 hospitality security cctv access control wifi internet corporate'
     },
     {
       id: 'case-study-blue-valley',
@@ -92,6 +92,27 @@ export default function SearchPage({ setCurrentPage }) {
       category: 'Projects',
       description: 'Bespoke smart-home automation, centralized access systems, and high-performance WiFi routing for smart living.',
       keywords: 'the urban apartments smart apartments residential home automation centralized access access control'
+    },
+    {
+      id: 'case-study-goil',
+      title: 'GOIL PLC Headquarters',
+      category: 'Projects',
+      description: 'Enterprise networks, server setups, and access systems for a key corporate player in the market.',
+      keywords: 'goil plc headquarters corporate networks server setups access systems'
+    },
+    {
+      id: 'case-study-anfield',
+      title: 'Anfield Residence',
+      category: 'Projects',
+      description: 'Unified luxury automation and smart climate controls for a premium residential living experience.',
+      keywords: 'anfield residence luxury automation smart climate controls residential'
+    },
+    {
+      id: 'case-study-koan',
+      title: 'KOAN Energy Center',
+      category: 'Projects',
+      description: 'Failsafe industrial networks and remote CCTV systems for a high-value energy storage terminal.',
+      keywords: 'koan energy center industrial networks failsafe remote cctv'
     },
     {
       id: 'partners',

@@ -45,7 +45,7 @@ export default function IndustriesPage({ setCurrentPage }) {
         'Integrated monitoring platforms'
       ],
       projects: [
-        { id: 'case-study-accra', title: 'Accra City Hotel' }
+        { id: 'case-study-accra', title: 'Accra City Phase 2' }
       ]
     },
     {

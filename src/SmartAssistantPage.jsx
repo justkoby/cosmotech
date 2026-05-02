@@ -74,12 +74,24 @@ export default function SmartAssistantPage({ setCurrentPage }) {
   return (
     <div className="assistant-page-container">
       {/* 1. HERO SECTION */}
-      <section className="assistant-hero">
-        <div className="assistant-hero-overlay">
-          <div className="assistant-hero-content">
-            <span className="assistant-badge-accent">Interactive Sales Assistant</span>
-            <h1 className="assistant-hero-title">Custom Technology Project Solutions</h1>
-            <p className="assistant-hero-subtext">
+      <section 
+        className="assistant-hero" 
+        style={{
+          backgroundImage: "linear-gradient(rgba(12, 27, 16, 0.7), rgba(12, 27, 16, 0.85)), url('/1-01.webp')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: '160px 10% 80px 10%',
+          minHeight: '400px',
+          display: 'flex',
+          alignItems: 'center',
+          position: 'relative'
+        }}
+      >
+        <div className="assistant-hero-overlay" style={{ background: 'none' }}>
+          <div className="assistant-hero-content" style={{ maxWidth: '850px' }}>
+            <span className="assistant-badge-accent" style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', display: 'inline-block', marginBottom: '12px' }}>Interactive Sales Assistant</span>
+            <h1 className="assistant-hero-title" style={{ fontSize: '42px', color: '#ffffff', fontWeight: 800, lineHeight: 1.2, marginBottom: '16px' }}>Custom Technology Project Solutions</h1>
+            <p className="assistant-hero-subtext" style={{ fontSize: '17px', color: '#cbd5e1', lineHeight: 1.6, maxWidth: '720px' }}>
               Let our intelligent assistant guide you to the exact engineering solutions, quick estimates, and relevant services designed for your goals.
             </p>
           </div>

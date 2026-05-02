@@ -122,7 +122,7 @@ export default function SecuritySystemsPage({ setCurrentPage }) {
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#1e293b', marginBottom: '16px' }}>Related Projects</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.75)), url('/Accra City Hotel.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', height: '160px', borderRadius: '8px', padding: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', color: '#ffffff' }} onClick={() => { setCurrentPage('projects'); window.scrollTo(0, 0); }}>
-              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>Accra City Hotel</h4>
+              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700 }}>Accra City Phase 2</h4>
               <p style={{ margin: 0, fontSize: '12px', opacity: 0.85 }}>IP CCTV & Access Systems</p>
             </div>
           </div>

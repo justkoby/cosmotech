@@ -11,6 +11,9 @@ import FireDetectionPage from './FireDetectionPage'
 import AccraCityHotelPage from './AccraCityHotelPage'
 import BlueValleyPage from './BlueValleyPage'
 import UrbanApartmentsPage from './UrbanApartmentsPage'
+import GoilPlcHqPage from './GoilPlcHqPage'
+import AnfieldResidencePage from './AnfieldResidencePage'
+import KoanPage from './KoanPage'
 import ProcessPage from './ProcessPage'
 import IndustriesPage from './IndustriesPage'
 import FAQPage from './FAQPage'
@@ -28,9 +31,7 @@ function App() {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
 
   React.useEffect(() => {
-    if (!window.history.state || !window.history.state.page) {
-      window.history.replaceState({ page: currentPage }, '', '')
-    }
+    window.history.replaceState({ page: currentPage }, '', '')
 
     const handlePopState = (event) => {
       if (event.state && event.state.page) {
@@ -45,7 +46,8 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    if (window.history.state && window.history.state.page !== currentPage) {
+    localStorage.setItem('cosmotech_current_page', currentPage)
+    if (!window.history.state || window.history.state.page !== currentPage) {
       window.history.pushState({ page: currentPage }, '', '')
     }
   }, [currentPage])
@@ -367,7 +369,7 @@ function App() {
                   <div className="mega-col-project-featured" style={{ backgroundImage: "url('/Accra-City-Hotel.png')" }}>
                     <div className="menu-project-overlay">
                       <span className="featured-tag">Featured</span>
-                      <h3>Accra City Hotel</h3>
+                      <h3>Accra City Phase 2</h3>
                       <p>Security & Infrastructure Systems</p>
                     </div>
                   </div>
@@ -454,7 +456,7 @@ function App() {
 
         <div className="hero-content-container">
           <h1 className="hero-title">
-            Engineering Smart Technology Infrastructure for Homes and Businesses
+            Engineering Smart Technology Infrastructure for Business and Homes
           </h1>
           <p className="hero-subtitle">
             COSMOTECH PROJECT LTD delivers professional solutions in IT Infrastructure, Telecommunications, Security Systems, Smart Home Automation, and Fire Safety Systems across Ghana.
@@ -474,7 +476,7 @@ function App() {
       {/* 4.5. TRUST BAR (Selected Clients) */}
       <section className="trust-bar">
         <div className="trust-inner">
-          <span className="trust-label">Trusted By Leading Brands</span>
+          <span className="trust-label">Trusted by Leading Organizations</span>
           <div className="trust-logos-wrapper">
             <div className="trust-logos-track">
               <img src="/goil-plc.jpg" alt="GOIL PLC" />
@@ -485,7 +487,7 @@ function App() {
               <img src="/APAL Developers.png" alt="APAL Developers" />
               <img src="/koan.png" alt="KOAN Energy" />
               <img src="/blue-valley.png" alt="Blue Valley Specialist Hospital" />
-              <img src="/Accra City Hotel.jpg" alt="Accra City Hotel" />
+              <img src="/Accra City Hotel.jpg" alt="Accra City Phase 2" />
               <img src="/The Urban Apartments.png" alt="The Urban Apartments" />
               <img src="/iris-apartment.png" alt="Iris Apartments" />
               <img src="/Hope Wells Hotel Plaza.png" alt="Hope Wells Hotel Plaza" />
@@ -499,7 +501,7 @@ function App() {
               <img src="/APAL Developers.png" alt="APAL Developers" />
               <img src="/koan.png" alt="KOAN Energy" />
               <img src="/blue-valley.png" alt="Blue Valley Specialist Hospital" />
-              <img src="/Accra City Hotel.jpg" alt="Accra City Hotel" />
+              <img src="/Accra City Hotel.jpg" alt="Accra City Phase 2" />
               <img src="/The Urban Apartments.png" alt="The Urban Apartments" />
               <img src="/iris-apartment.png" alt="Iris Apartments" />
               <img src="/Hope Wells Hotel Plaza.png" alt="Hope Wells Hotel Plaza" />
@@ -511,11 +513,11 @@ function App() {
       {/* 5. SEO KEYWORDS SECTION */}
 
       <section className="seo-keywords-section">
-        <span className="seo-badge">#1 IT infrastructure Ghana</span>
-        <span className="seo-badge">#1 Security systems Ghana</span>
-        <span className="seo-badge">#1 Smart home installation Accra</span>
-        <span className="seo-badge">#1 CCTV installation Ghana</span>
-        <span className="seo-badge">#1 Network infrastructure company Ghana</span>
+        <span className="seo-badge">#1 IT infrastructure in Ghana</span>
+        <span className="seo-badge">#1 Security systems in Ghana</span>
+        <span className="seo-badge">#1 Smart home installation in Accra</span>
+        <span className="seo-badge">#1 CCTV installation in Ghana</span>
+        <span className="seo-badge">#1 Network infrastructure company in Ghana</span>
       </section>
       {/* 6. ABOUT SECTION */}
 
@@ -645,7 +647,7 @@ function App() {
           <div className="project-tile project-large" style={{ backgroundImage: `url('/Accra-City-Hotel.png')` }}>
             <div className="project-overlay">
               <span className="project-category">Security & Infrastructure</span>
-              <h3 className="project-name">Accra City Hotel</h3>
+              <h3 className="project-name">Accra City Phase 2</h3>
               <p className="project-desc-short">Enterprise CCTV installation and smart home integration.</p>
             </div>
           </div>
@@ -822,6 +824,18 @@ function App() {
 
       {currentPage === 'case-study-urban' && (
         <UrbanApartmentsPage setCurrentPage={setCurrentPage} />
+      )}
+
+      {currentPage === 'case-study-goil' && (
+        <GoilPlcHqPage setCurrentPage={setCurrentPage} />
+      )}
+
+      {currentPage === 'case-study-anfield' && (
+        <AnfieldResidencePage setCurrentPage={setCurrentPage} />
+      )}
+
+      {currentPage === 'case-study-koan' && (
+        <KoanPage setCurrentPage={setCurrentPage} />
       )}
 
       {currentPage === 'process' && (

@@ -90,8 +90,8 @@ export default function MobileHomepage({ setCurrentPage }) {
             <img src="/APAL Developers.png" alt="APAL Developers" />
             <img src="/koan.png" alt="KOAN Energy" />
             <img src="/blue-valley.png" alt="Blue Valley Specialist Hospital" />
-            <img src="/Accra City Hotel.jpg" alt="Accra City Hotel" />
-            <img src="/The Urban Apartments.png" alt="The Urban Apartments" />
+            <img src="/Accra City Hotel.jpg" alt="Accra City Phase 2" />
+            <img src="/goil-plc.jpg" alt="GOIL PLC" />
             <img src="/iris-apartment.png" alt="Iris Apartments" />
             <img src="/Hope Wells Hotel Plaza.png" alt="Hope Wells Hotel Plaza" />
             {/* Duplicate track for infinite loop */}
@@ -103,8 +103,8 @@ export default function MobileHomepage({ setCurrentPage }) {
             <img src="/APAL Developers.png" alt="APAL Developers" />
             <img src="/koan.png" alt="KOAN Energy" />
             <img src="/blue-valley.png" alt="Blue Valley Specialist Hospital" />
-            <img src="/Accra City Hotel.jpg" alt="Accra City Hotel" />
-            <img src="/The Urban Apartments.png" alt="The Urban Apartments" />
+            <img src="/Accra City Hotel.jpg" alt="Accra City Phase 2" />
+            <img src="/goil-plc.jpg" alt="GOIL PLC" />
             <img src="/iris-apartment.png" alt="Iris Apartments" />
             <img src="/Hope Wells Hotel Plaza.png" alt="Hope Wells Hotel Plaza" />
           </div>
@@ -170,12 +170,12 @@ export default function MobileHomepage({ setCurrentPage }) {
         <h2 className="mob-section-title">Featured Projects</h2>
         <div className="mob-projects-vertical">
           <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/Accra-City-Hotel.png')" }} onClick={() => setCurrentPage('case-study-accra')}>
-            <h3 className="mob-proj-name">Accra City Hotel</h3>
+            <h3 className="mob-proj-name">Accra City Phase 2</h3>
             <span className="mob-proj-cat">Security & Infrastructure</span>
           </div>
 
           <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/blue-valley.png')" }} onClick={() => setCurrentPage('case-study-blue-valley')}>
-            <h3 className="mob-proj-name">Blue Valley Hospital</h3>
+            <h3 className="mob-proj-name">Blue Valley Specialist Hospital</h3>
             <span className="mob-proj-cat">Healthcare Infrastructure</span>
           </div>
 
