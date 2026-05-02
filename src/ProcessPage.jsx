@@ -8,54 +8,22 @@ export default function ProcessPage({ setCurrentPage }) {
   return (
     <div className="process-page-container">
       {/* 1. HERO SECTION */}
-      <section className="process-hero" style={{ backgroundImage: `url('/1-01.webp')` }}>
-        <div className="process-hero-overlay">
-          <div className="process-hero-content">
-            <span className="process-badge-accent">Our Process</span>
-            <h1 className="process-hero-title">From Concept to Connected Systems</h1>
-            <p className="process-hero-subtext">
+      <section className="about-hero" style={{ backgroundImage: `url('/1-01.webp')` }}>
+        <div className="about-hero-overlay">
+          <div className="about-hero-content">
+            <span className="about-badge" style={{ color: '#f59e0b' }}>Our Process</span>
+            <h1 className="about-hero-title">From Concept to Connected Systems</h1>
+            <p className="about-hero-subtext" style={{ marginBottom: '24px' }}>
               COSMOTECH follows a structured engineering process to design, install, integrate, and support reliable technology systems for homes, businesses, and institutions.
             </p>
-            <button className="process-hero-cta" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+            <button className="process-hero-cta" style={{ backgroundColor: '#f59e0b', color: '#0c1b10', padding: '14px 24px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', cursor: 'pointer' }} onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
               Request Consultation &rarr;
             </button>
           </div>
         </div>
       </section>
 
-      {/* 2. PROCESS OVERVIEW */}
-      <section className="process-overview-section">
-        <div className="process-section-header">
-          <h2 className="process-section-title centered">Workflow Overview</h2>
-          <p className="process-section-subtitle centered">A modern visual breakdown of our sequential engineering delivery.</p>
-        </div>
-        <div className="horizontal-process-timeline">
-          <div className="timeline-segment">
-            <div className="timeline-node">#1</div>
-            <h4 className="timeline-label">Consultation</h4>
-          </div>
-          <div className="timeline-segment">
-            <div className="timeline-node">#2</div>
-            <h4 className="timeline-label">Site Assessment</h4>
-          </div>
-          <div className="timeline-segment">
-            <div className="timeline-node">#3</div>
-            <h4 className="timeline-label">System Design</h4>
-          </div>
-          <div className="timeline-segment">
-            <div className="timeline-node">#4</div>
-            <h4 className="timeline-label">Installation</h4>
-          </div>
-          <div className="timeline-segment">
-            <div className="timeline-node">#5</div>
-            <h4 className="timeline-label">Integration</h4>
-          </div>
-          <div className="timeline-segment">
-            <div className="timeline-node">#6</div>
-            <h4 className="timeline-label">Support</h4>
-          </div>
-        </div>
-      </section>
+
 
       {/* 3. DETAILED PROCESS SECTIONS */}
       <section className="process-details-section">
@@ -67,7 +35,7 @@ export default function ProcessPage({ setCurrentPage }) {
               We begin by understanding your project goals, environment, budget, and technical requirements. This allows our team to outline exactly how technology can improve your operational workflows or everyday lifestyle.
             </p>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/2-01.webp')` }}></div>
+          <div className="step-visual-col" style={{ backgroundImage: `url('/Consultation.jpg')` }}></div>
         </div>
 
         <div className="process-step-block reverse">
@@ -78,7 +46,7 @@ export default function ProcessPage({ setCurrentPage }) {
               Our team thoroughly evaluates your physical space, existing infrastructure, risks, and performance limitations. This prevents unneeded surprises during physical deployment.
             </p>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/oxford.webp')` }}></div>
+          <div className="step-visual-col" style={{ backgroundImage: `url('/Site Assessment.jpg')` }}></div>
         </div>
 
         <div className="process-step-block">
@@ -89,7 +57,7 @@ export default function ProcessPage({ setCurrentPage }) {
               We develop a tailored, compliant system architecture covering advanced equipment choice, placement, network integration, scalability, and bandwidth limit planning.
             </p>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/monarch-hotel.jpg')` }}></div>
+          <div className="step-visual-col" style={{ backgroundImage: `url('/System Design.png')` }}></div>
         </div>
 
         <div className="process-step-block reverse">
@@ -100,7 +68,7 @@ export default function ProcessPage({ setCurrentPage }) {
               Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations. We maintain stringent quality control and assurance at every phase of deployment.
             </p>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Anfield Residence.jpg')` }}></div>
+          <div className="step-visual-col" style={{ backgroundImage: `url('/Installation & Quality Control.png')` }}></div>
         </div>
 
         <div className="process-step-block">
@@ -111,7 +79,7 @@ export default function ProcessPage({ setCurrentPage }) {
               We connect all technology components into one working system and test performance, reliability, and usability end-to-end.
             </p>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/goil-plc.jpg')` }}></div>
+          <div className="step-visual-col" style={{ backgroundImage: `url('/Integration & Testing.png')` }}></div>
         </div>
 
         <div className="process-step-block reverse">
@@ -122,7 +90,7 @@ export default function ProcessPage({ setCurrentPage }) {
               After completion, we provide ongoing support, preventative testing, hardware checks, and continuous technical assistance.
             </p>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Accra-City-Hotel.png')` }}></div>
+          <div className="step-visual-col" style={{ backgroundImage: `url('/Support & Maintenance.jpg')` }}></div>
         </div>
       </section>
 

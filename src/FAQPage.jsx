@@ -147,12 +147,12 @@ export default function FAQPage({ setCurrentPage }) {
       {/* -------------------- DESKTOP PAGE FLOW (hidden lg:block) -------------------- */}
       <div className="hidden lg:block">
         {/* 1. HERO SECTION */}
-        <section className="faq-hero" style={{ backgroundImage: `url('/1-01.webp')` }}>
-          <div className="faq-hero-overlay">
-            <div className="faq-hero-content">
-              <span className="faq-badge-accent">Direct Answers</span>
-              <h1 className="faq-hero-title">Frequently Asked Questions</h1>
-              <p className="faq-hero-subtext">
+        <section className="about-hero" style={{ backgroundImage: `url('/1-01.webp')` }}>
+          <div className="about-hero-overlay">
+            <div className="about-hero-content">
+              <span className="about-badge" style={{ color: '#f59e0b' }}>Direct Answers</span>
+              <h1 className="about-hero-title">Frequently Asked Questions</h1>
+              <p className="about-hero-subtext">
                 Find answers to common questions about our services, process, and how COSMOTECH delivers reliable technology solutions.
               </p>
             </div>
