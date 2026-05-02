@@ -22,6 +22,7 @@ import ChatbotWidget from './ChatbotWidget'
 import MobileHomepage from './MobileHomepage'
 import InteractiveServices from './InteractiveServices'
 import SearchPage from './SearchPage'
+import ConsultationPage from './ConsultationPage'
 
 function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -162,12 +163,9 @@ function App() {
               <li>
                 <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('faq'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>FAQ</a>
               </li>
-              <li>
-                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>✨ Assistant</a>
-              </li>
             </ul>
             <div className="mob-nav-cta-wrapper">
-              <button className="mob-nav-cta-btn" onClick={() => { setCurrentPage('home'); setIsMobileMenuOpen(false); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+              <button className="mob-nav-cta-btn" onClick={() => { setCurrentPage('consultation'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>
                 Request Consultation
               </button>
             </div>
@@ -222,7 +220,7 @@ function App() {
             <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); window.scrollTo(0, 0); }}>
               <img src="/logo white.png" alt="Cosmotech Projects Ltd." />
             </a>
-            <button className="contact-us-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>Contact us</button>
+            <button className="contact-us-btn" onClick={() => setCurrentPage('consultation')}>Contact us</button>
           </div>
         </div>
       </div>
@@ -430,11 +428,6 @@ function App() {
             {/* FAQ Menu */}
             <li className="nav-item">
               <a href="#" className="nav-link-label" onClick={(e) => { e.preventDefault(); setCurrentPage('faq'); window.scrollTo(0, 0); }}>FAQ</a>
-            </li>
-
-            {/* Smart Matcher Menu */}
-            <li className="nav-item matcher-nav-link">
-              <a href="#" className="nav-link-label" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); window.scrollTo(0, 0); }}>✨ Assistant</a>
             </li>
           </ul>
           <div className="nav-search" onClick={() => { setCurrentPage('search'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
@@ -850,9 +843,10 @@ function App() {
         <FAQPage setCurrentPage={setCurrentPage} />
       )}
 
-      {currentPage === 'smart-assistant' && (
-        <SmartAssistantPage setCurrentPage={setCurrentPage} />
+      {currentPage === 'consultation' && (
+        <ConsultationPage setCurrentPage={setCurrentPage} />
       )}
+
 
       {currentPage === 'search' && (
         <SearchPage setCurrentPage={setCurrentPage} />
@@ -900,8 +894,7 @@ function App() {
               <h4 className="footer-col-title">Sectors & Tools</h4>
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>Industries Served</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>Our Portfolio</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); window.scrollTo(0, 0); }}>Smart Project Matcher</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>Contact Us</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('consultation'); window.scrollTo(0, 0); }}>Contact Us</a>
             </div>
           </div>
 

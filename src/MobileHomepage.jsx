@@ -12,7 +12,7 @@ export default function MobileHomepage({ setCurrentPage }) {
   }
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/233545508808', '_blank')
+    window.open('https://wa.me/233531018219', '_blank')
   }
 
   const handleCall = () => {
@@ -58,8 +58,11 @@ export default function MobileHomepage({ setCurrentPage }) {
             IT infrastructure, security, automation, telecoms, and fire safety solutions across Ghana.
           </p>
           <div className="mob-hero-ctas">
-            <button className="mob-cta-primary" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+            <button className="mob-cta-primary" onClick={() => setCurrentPage('consultation')}>
               Request Consultation
+            </button>
+            <button className="mob-cta-whatsapp" onClick={handleWhatsApp}>
+              Chat via WhatsApp
             </button>
           </div>
         </div>
@@ -179,9 +182,9 @@ export default function MobileHomepage({ setCurrentPage }) {
             <span className="mob-proj-cat">Healthcare Infrastructure</span>
           </div>
 
-          <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/The Urban Apartments.png')" }} onClick={() => setCurrentPage('case-study-urban')}>
-            <h3 className="mob-proj-name">The Urban Apartments</h3>
-            <span className="mob-proj-cat">Smart Residential Systems</span>
+          <div className="mob-project-tile" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.85)), url('/goil-plc.jpg')" }} onClick={() => setCurrentPage('case-study-goil')}>
+            <h3 className="mob-proj-name">GOIL PLC Headquarters</h3>
+            <span className="mob-proj-cat">Enterprise Networks & Infrastructure</span>
           </div>
         </div>
 
@@ -206,7 +209,7 @@ export default function MobileHomepage({ setCurrentPage }) {
         <h2 className="mob-final-title">Ready to start your project?</h2>
         <p className="mob-final-desc">Talk to COSMOTECH engineers today.</p>
         <div className="mob-final-ctas">
-          <button className="mob-final-btn-primary" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
+          <button className="mob-final-btn-primary" onClick={() => setCurrentPage('consultation')}>
             Request Consultation
           </button>
           <button className="mob-final-btn-secondary" onClick={handleCall}>
