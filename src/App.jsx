@@ -690,7 +690,6 @@ function App() {
                   <div>
                     <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: 0 }}>General & Support Inquiries</h4>
                     <p style={{ fontSize: '14px', color: '#64748b', margin: '4px 0 0 0', lineHeight: 1.5 }}>
-                      <a href="mailto:Anthony.ddonkor@outlook.com" style={{ color: '#2563eb', textDecoration: 'none' }}>Anthony.ddonkor@outlook.com</a><br />
                       <a href="mailto:info@cosmotechprojects.com" style={{ color: '#2563eb', textDecoration: 'none' }}>info@cosmotechprojects.com</a>
                     </p>
                   </div>
