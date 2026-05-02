@@ -80,11 +80,34 @@ export default function MobileHomepage({ setCurrentPage }) {
       {/* 3. TRUST PROOF */}
       <section className="mob-trust-proof">
         <h2 className="mob-section-title">Trusted by leading organizations</h2>
-        <div className="mob-logos-grid">
-          <div className="mob-trust-logo">GOIL</div>
-          <div className="mob-trust-logo">Accra City Hotel</div>
-          <div className="mob-trust-logo">Blue Valley</div>
-          <div className="mob-trust-logo">Urban Apartments</div>
+        <div className="mob-trust-logos-wrapper">
+          <div className="mob-trust-logos-track">
+            <img src="/goil-plc.jpg" alt="GOIL PLC" />
+            <img src="/iac.png" alt="IAC" />
+            <img src="/Key Architectural.png" alt="Key Architectural" />
+            <img src="/Coral Pro.png" alt="Coral Pro" />
+            <img src="/GOBITUMEN.png" alt="GOBITUMEN" />
+            <img src="/APAL Developers.png" alt="APAL Developers" />
+            <img src="/koan.png" alt="KOAN Energy" />
+            <img src="/blue-valley.png" alt="Blue Valley Specialist Hospital" />
+            <img src="/Accra City Hotel.jpg" alt="Accra City Hotel" />
+            <img src="/The Urban Apartments.png" alt="The Urban Apartments" />
+            <img src="/iris-apartment.png" alt="Iris Apartments" />
+            <img src="/Hope Wells Hotel Plaza.png" alt="Hope Wells Hotel Plaza" />
+            {/* Duplicate track for infinite loop */}
+            <img src="/goil-plc.jpg" alt="GOIL PLC" />
+            <img src="/iac.png" alt="IAC" />
+            <img src="/Key Architectural.png" alt="Key Architectural" />
+            <img src="/Coral Pro.png" alt="Coral Pro" />
+            <img src="/GOBITUMEN.png" alt="GOBITUMEN" />
+            <img src="/APAL Developers.png" alt="APAL Developers" />
+            <img src="/koan.png" alt="KOAN Energy" />
+            <img src="/blue-valley.png" alt="Blue Valley Specialist Hospital" />
+            <img src="/Accra City Hotel.jpg" alt="Accra City Hotel" />
+            <img src="/The Urban Apartments.png" alt="The Urban Apartments" />
+            <img src="/iris-apartment.png" alt="Iris Apartments" />
+            <img src="/Hope Wells Hotel Plaza.png" alt="Hope Wells Hotel Plaza" />
+          </div>
         </div>
         <button className="mob-view-projects-btn" onClick={() => setCurrentPage('projects')}>
           View Our Projects &rarr;

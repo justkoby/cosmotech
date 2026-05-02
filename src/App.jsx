@@ -151,7 +151,8 @@ function App() {
 
       {/* DESKTOP ONLY HEADERS (hidden lg:block) */}
       {/* 1. TOP BAR */}
-      <div className="top-bar hidden lg:flex">
+      <div className="hidden lg:block">
+        <div className="top-bar">
         <div className="top-bar-left">
           <div className="social-links">
             <a href="#" className="social-icon" aria-label="Facebook">
@@ -186,20 +187,24 @@ function App() {
           </span>
         </div>
       </div>
+      </div>
 
       {/* 2. LOGO & CTA BAR */}
-      <div className="logo-section hidden lg:block">
-        <div className="logo-inner">
-          <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); window.scrollTo(0, 0); }}>
-            <img src="/logo white.png" alt="Cosmotech Projects Ltd." />
-          </a>
-          <button className="contact-us-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>Contact us</button>
+      <div className="hidden lg:block">
+        <div className="logo-section">
+          <div className="logo-inner">
+            <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); window.scrollTo(0, 0); }}>
+              <img src="/logo white.png" alt="Cosmotech Projects Ltd." />
+            </a>
+            <button className="contact-us-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>Contact us</button>
+          </div>
         </div>
       </div>
 
       {/* 3. FLOATING NAVBAR */}
-      <div className="navbar-wrapper hidden lg:flex">
-        <nav className="navbar">
+      <div className="hidden lg:block">
+        <div className="navbar-wrapper">
+          <nav className="navbar">
           <ul className="nav-links">
             <li className="nav-item">
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); window.scrollTo(0, 0); }}>Home</a>
@@ -410,6 +415,7 @@ function App() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
         </nav>
+      </div>
       </div>
 
       {currentPage === 'home' && (

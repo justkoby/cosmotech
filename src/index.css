@@ -6517,3 +6517,57 @@ button {
     transform: translateY(0);
   }
 }
+
+/* Mobile Trusted Logos Slider */
+.mob-trust-logos-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 24px;
+  background-color: #ffffff;
+  padding: 16px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.mob-trust-logos-track {
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  animation: mobLogoSlide 25s linear infinite;
+  align-items: center;
+}
+
+.mob-trust-logos-track img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.mob-trust-logos-track img:hover {
+  opacity: 1;
+}
+
+@keyframes mobLogoSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile Chatbot Widget Optimization */
+@media (max-width: 768px) {
+  .chat-drawer {
+    position: fixed !important;
+    bottom: 85px !important;
+    right: 15px !important;
+    left: 15px !important;
+    width: calc(100% - 30px) !important;
+    height: 420px !important;
+    z-index: 100000 !important;
+  }
+}
