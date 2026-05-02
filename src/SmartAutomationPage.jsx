@@ -8,7 +8,7 @@ export default function SmartAutomationPage({ setCurrentPage }) {
   return (
     <div className="service-detail-page-container automation-theme">
       {/* 1. HERO SECTION */}
-      <section className="service-hero" style={{ backgroundImage: `url('/luxury-interior.webp')` }}>
+      <section className="service-hero" style={{ backgroundImage: `url('/Smart Automation.jpeg')` }}>
         <div className="service-hero-overlay">
           <div className="service-hero-content">
             <span className="service-badge-accent">Lifestyle Automation</span>

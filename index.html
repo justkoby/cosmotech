@@ -15,5 +15,17 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.addEventListener('scroll', function() {
+        var nav = document.querySelector('.navbar-wrapper');
+        if (nav) {
+          if (window.scrollY > 150) {
+            nav.classList.add('is-sticky');
+          } else {
+            nav.classList.remove('is-sticky');
+          }
+        }
+      }, { passive: true });
+    </script>
   </body>
 </html>

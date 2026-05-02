@@ -27,10 +27,18 @@ export default function PartnersPage({ setCurrentPage }) {
           <p className="services-section-subtitle centered">Leading hardware and software pioneers integrated into our core engineering stack.</p>
         </div>
         <div className="partner-logos-interactive-grid">
-          <div className="partner-grid-box" title="Leading smart electrical solutions">Legrand</div>
-          <div className="partner-grid-box" title="Enterprise security & surveillance systems">Hikvision</div>
-          <div className="partner-grid-box" title="Luxury smart home and centralized automation">Vimar</div>
-          <div className="partner-grid-box" title="Energy management and smart automation systems">Schneider Electric</div>
+          <div className="partner-grid-box" title="Leading smart electrical solutions">
+            <img src="/legrand.png" alt="Legrand" style={{ maxHeight: '55px', maxWidth: '85%', objectFit: 'contain' }} />
+          </div>
+          <div className="partner-grid-box" title="Enterprise security & surveillance systems">
+            <img src="/Hikvision-Logo.png" alt="Hikvision" style={{ maxHeight: '55px', maxWidth: '85%', objectFit: 'contain' }} />
+          </div>
+          <div className="partner-grid-box" title="Luxury smart home and centralized automation">
+            <img src="/vimar.jpg" alt="Vimar" style={{ maxHeight: '55px', maxWidth: '85%', objectFit: 'contain' }} />
+          </div>
+          <div className="partner-grid-box" title="Energy management and smart automation systems">
+            <img src="/Schneider Electric.png" alt="Schneider Electric" style={{ maxHeight: '55px', maxWidth: '85%', objectFit: 'contain' }} />
+          </div>
         </div>
       </section>
 
@@ -48,7 +56,7 @@ export default function PartnersPage({ setCurrentPage }) {
             </p>
           </div>
           <div className="partner-detail-logo-box">
-            <span>Legrand</span>
+            <img src="/legrand.png" alt="Legrand" style={{ maxHeight: '70px', maxWidth: '90%', objectFit: 'contain' }} />
           </div>
         </div>
 
@@ -63,7 +71,7 @@ export default function PartnersPage({ setCurrentPage }) {
             </p>
           </div>
           <div className="partner-detail-logo-box">
-            <span>Hikvision</span>
+            <img src="/Hikvision-Logo.png" alt="Hikvision" style={{ maxHeight: '70px', maxWidth: '90%', objectFit: 'contain' }} />
           </div>
         </div>
 
@@ -78,7 +86,7 @@ export default function PartnersPage({ setCurrentPage }) {
             </p>
           </div>
           <div className="partner-detail-logo-box">
-            <span>Vimar</span>
+            <img src="/vimar.jpg" alt="Vimar" style={{ maxHeight: '70px', maxWidth: '90%', objectFit: 'contain' }} />
           </div>
         </div>
 
@@ -93,7 +101,7 @@ export default function PartnersPage({ setCurrentPage }) {
             </p>
           </div>
           <div className="partner-detail-logo-box">
-            <span>Schneider</span>
+            <img src="/Schneider Electric.png" alt="Schneider Electric" style={{ maxHeight: '70px', maxWidth: '90%', objectFit: 'contain' }} />
           </div>
         </div>
       </section>

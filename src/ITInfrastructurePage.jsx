@@ -8,7 +8,7 @@ export default function ITInfrastructurePage({ setCurrentPage }) {
   return (
     <div className="service-detail-page-container">
       {/* 1. HERO SECTION */}
-      <section className="service-hero" style={{ backgroundImage: `url('/2-01.webp')` }}>
+      <section className="service-hero" style={{ backgroundImage: `url('/IT Infrastructure.jpg')` }}>
         <div className="service-hero-overlay">
           <div className="service-hero-content">
             <span className="service-badge-accent">Core Infrastructure</span>
@@ -36,7 +36,7 @@ export default function ITInfrastructurePage({ setCurrentPage }) {
               Our solutions are designed to ensure reliability, scalability, and secure data flow across your organization. Whether you're setting up a new facility or upgrading an existing system, we deliver infrastructure that supports growth and long-term performance.
             </p>
           </div>
-          <div className="overview-image" style={{ backgroundImage: `url('/1-01.webp')` }}></div>
+          <div className="overview-image" style={{ backgroundImage: `url('/IT Infrastructure.jpg')` }}></div>
         </div>
       </section>
 

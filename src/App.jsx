@@ -18,13 +18,34 @@ import SmartAssistantPage from './SmartAssistantPage'
 import ChatbotWidget from './ChatbotWidget'
 import MobileHomepage from './MobileHomepage'
 import InteractiveServices from './InteractiveServices'
+import SearchPage from './SearchPage'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
+  const [currentPage, setCurrentPage] = useState(() => {
+    return localStorage.getItem('cosmotech_current_page') || 'home'
+  })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop
+      const nav = document.querySelector('.navbar-wrapper')
+      if (nav) {
+        if (currentScroll > 150) {
+          nav.classList.add('is-sticky')
+        } else {
+          nav.classList.remove('is-sticky')
+        }
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   React.useEffect(() => {
+    localStorage.setItem('cosmotech_current_page', currentPage)
+
     let title = "COSMOTECH Project Ltd | Intelligent Technology Systems"
     let desc = "We design, install, and integrate advanced IT, telecommunications, security, and smart automation systems across Ghana."
 
@@ -80,6 +101,9 @@ function App() {
                 <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>Home</a>
               </li>
               <li>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('search'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>🔍 Search</a>
+              </li>
+              <li>
                 <div className="mob-nav-accordion-trigger" onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}>
                   <span>Services</span>
                   <span>{isMobileServicesOpen ? '−' : '+'}</span>
@@ -126,9 +150,8 @@ function App() {
       </div>
 
       {/* DESKTOP ONLY HEADERS (hidden lg:block) */}
-      <div className="hidden lg:block">
       {/* 1. TOP BAR */}
-      <div className="top-bar">
+      <div className="top-bar hidden lg:flex">
         <div className="top-bar-left">
           <div className="social-links">
             <a href="#" className="social-icon" aria-label="Facebook">
@@ -165,7 +188,7 @@ function App() {
       </div>
 
       {/* 2. LOGO & CTA BAR */}
-      <div className="logo-section">
+      <div className="logo-section hidden lg:block">
         <div className="logo-inner">
           <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); window.scrollTo(0, 0); }}>
             <img src="/logo white.png" alt="Cosmotech Projects Ltd." />
@@ -175,7 +198,7 @@ function App() {
       </div>
 
       {/* 3. FLOATING NAVBAR */}
-      <div className="navbar-wrapper">
+      <div className="navbar-wrapper hidden lg:flex">
         <nav className="navbar">
           <ul className="nav-links">
             <li className="nav-item">
@@ -192,6 +215,7 @@ function App() {
                 <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }}>Who We Are</a>
                 <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }}>Vision & Mission</a>
                 <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }}>Leadership</a>
+                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('process'); window.scrollTo(0, 0); }}>How We Work</a>
               </div>
             </li>
 
@@ -323,25 +347,43 @@ function App() {
                   <div className="mega-col">
                     <h4 className="mega-title">Project Categories</h4>
                     <div className="mega-list">
-                      <a href="#" className="mega-item">
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>
                         <span className="item-bold">Hospitality Projects</span>
                         <span className="item-desc">Hotels and resorts worldwide</span>
                       </a>
-                      <a href="#" className="mega-item">
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>
                         <span className="item-bold">Residential Projects</span>
                         <span className="item-desc">High-end housing automation</span>
                       </a>
-                      <a href="#" className="mega-item">
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>
                         <span className="item-bold">Industrial Projects</span>
                         <span className="item-desc">Network systems for production</span>
                       </a>
-                      <a href="#" className="mega-item">
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>
                         <span className="item-bold">Healthcare Projects</span>
                         <span className="item-desc">Secure intelligent systems</span>
                       </a>
                     </div>
                     <div className="mega-bottom-link">
-                      <a href="#">View All Projects →</a>
+                      <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>View All Projects →</a>
+                    </div>
+                  </div>
+
+                  {/* 3rd Column: Industries */}
+                  <div className="mega-col">
+                    <h4 className="mega-title">Industries We Serve</h4>
+                    <div className="mega-list">
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>
+                        <span className="item-bold">Sectors & Industries</span>
+                        <span className="item-desc">Tailored high-availability systems</span>
+                      </a>
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>
+                        <span className="item-bold">Solutions by Industry</span>
+                        <span className="item-desc">Hotels, Data Centers, Corporate</span>
+                      </a>
+                    </div>
+                    <div className="mega-bottom-link">
+                      <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>View All Industries →</a>
                     </div>
                   </div>
                 </div>
@@ -349,26 +391,10 @@ function App() {
             </li>
 
             {/* Partners Menu */}
-            <li className="nav-item has-dropdown">
-              <span className="nav-link-label" onClick={() => { setCurrentPage('partners'); window.scrollTo(0, 0); }}>
-                Partners
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-              </span>
-              <div className="simple-dropdown">
-                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('partners'); window.scrollTo(0, 0); }}>Our Partners</a>
-                <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('partners'); window.scrollTo(0, 0); }}>Partner with Us</a>
-              </div>
+            <li className="nav-item">
+              <a href="#" className="nav-link-label" onClick={(e) => { e.preventDefault(); setCurrentPage('partners'); window.scrollTo(0, 0); }}>Partners</a>
             </li>
 
-            {/* Industries Menu */}
-            <li className="nav-item">
-              <a href="#" className="nav-link-label" onClick={(e) => { e.preventDefault(); setCurrentPage('industries'); window.scrollTo(0, 0); }}>Industries</a>
-            </li>
-
-            {/* How We Work Menu */}
-            <li className="nav-item">
-              <a href="#" className="nav-link-label" onClick={(e) => { e.preventDefault(); setCurrentPage('process'); window.scrollTo(0, 0); }}>How We Work</a>
-            </li>
 
             {/* FAQ Menu */}
             <li className="nav-item">
@@ -380,11 +406,10 @@ function App() {
               <a href="#" className="nav-link-label" onClick={(e) => { e.preventDefault(); setCurrentPage('smart-assistant'); window.scrollTo(0, 0); }}>✨ Assistant</a>
             </li>
           </ul>
-          <div className="nav-search">
+          <div className="nav-search" onClick={() => { setCurrentPage('search'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
         </nav>
-      </div>
       </div>
 
       {currentPage === 'home' && (
@@ -518,7 +543,7 @@ function App() {
 
       <section className="why-section">
         <div className="why-left">
-          <img src="/1-01.webp" alt="Cosmotech engineering project" />
+          <img src="/new-image.png" alt="Cosmotech engineering project" />
         </div>
 
         <div className="why-right">
@@ -617,31 +642,106 @@ function App() {
       </section>
 
       {/* 10. CTA SECTION */}
-      <section className="cta-contact-section">
-        <div className="cta-contact-left">
-          <h2 className="cta-contact-title">Ready to Start Your Next Project?</h2>
-          <p className="cta-contact-desc">
-            Whether it's a complex integration or a bespoke automation solution, our team is ready to bring your vision to life. Get in touch to discuss your specific requirements.
-          </p>
+      <section className="cta-contact-section" style={{ backgroundColor: '#f8fafc', padding: '100px 10%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', width: '100%', maxWidth: '1200px' }}>
+          
+          {/* Left: Office Information */}
+          <div className="contact-info-card" style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px', boxShadow: '0 8px 30px rgba(0,0,0,0.03)', border: '1px solid #f1f5f9', display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            <div>
+              <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#1e293b', marginBottom: '24px' }}>Our Office Information</h2>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <span style={{ display: 'inline-flex', marginTop: '4px' }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2c5c3c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <div>
+                    <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: 0 }}>Headquarters in Accra, Ghana</h4>
+                    <p style={{ fontSize: '14px', color: '#64748b', margin: '4px 0 0 0', lineHeight: 1.5 }}>
+                      Accra Digital Center, Ring Road West, Accra<br />
+                      P.O. Box 77, Adenta, Ghana
+                    </p>
+                  </div>
+                </div>
 
-          <form className="cta-contact-form" onSubmit={(e) => e.preventDefault()}>
-            <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <span style={{ display: 'inline-flex', marginTop: '4px' }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2c5c3c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </span>
+                  <div>
+                    <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: 0 }}>Call Us Anytime</h4>
+                    <p style={{ fontSize: '14px', color: '#64748b', margin: '4px 0 0 0', lineHeight: 1.5 }}>
+                      <a href="tel:+233531018219" style={{ color: '#2563eb', textDecoration: 'none' }}>+233 53 101 8219</a><br />
+                      <a href="tel:+233545508808" style={{ color: '#2563eb', textDecoration: 'none' }}>+233 54 550 8808</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <span style={{ display: 'inline-flex', marginTop: '4px' }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2c5c3c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <div>
+                    <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#1e293b', margin: 0 }}>General & Support Inquiries</h4>
+                    <p style={{ fontSize: '14px', color: '#64748b', margin: '4px 0 0 0', lineHeight: 1.5 }}>
+                      <a href="mailto:Anthony.ddonkor@outlook.com" style={{ color: '#2563eb', textDecoration: 'none' }}>Anthony.ddonkor@outlook.com</a><br />
+                      <a href="mailto:info@cosmotechprojects.com" style={{ color: '#2563eb', textDecoration: 'none' }}>info@cosmotechprojects.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="form-group">
-              <input type="email" placeholder="Your Email" required />
+
+            <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+              <h4 style={{ fontSize: '14px', fontWeight: 700, color: '#1e293b', margin: 0 }}>Connect with Us</h4>
+              <div style={{ display: 'flex', gap: '20px' }}>
+                <a href="#" style={{ color: '#1e293b', textDecoration: 'none' }} aria-label="Facebook">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" style={{ color: '#1e293b', textDecoration: 'none' }} aria-label="LinkedIn">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" style={{ color: '#1e293b', textDecoration: 'none' }} aria-label="YouTube">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="#" style={{ color: '#1e293b', textDecoration: 'none' }} aria-label="Instagram">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+              </div>
             </div>
-            <div className="form-group">
-              <textarea placeholder="Your Message" rows="4" required></textarea>
-            </div>
-            <button type="submit" className="cta-form-btn">
-              Send Inquiry
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-          </form>
+          </div>
+
+          {/* Right: Message Form */}
+          <div className="contact-form-card" style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px', boxShadow: '0 8px 30px rgba(0,0,0,0.03)', border: '1px solid #f1f5f9' }}>
+            <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#1e293b', marginBottom: '24px' }}>Send Us a Message</h2>
+            
+            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={(e) => e.preventDefault()}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+                <input type="text" placeholder="Your Name" required style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
+                <input type="email" placeholder="Your Email" required style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
+              </div>
+
+              <input type="tel" placeholder="Phone Number (Optional)" style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
+
+              <select style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} required>
+                <option value="">Select Service Interest</option>
+                <option value="IT Infrastructure">IT Infrastructure</option>
+                <option value="Security Systems">Security Systems</option>
+                <option value="Smart Automation">Smart Automation</option>
+                <option value="Telecoms">Telecommunications</option>
+                <option value="Fire Safety">Fire Detection</option>
+              </select>
+
+              <textarea placeholder="Your Message / Project Details" rows="4" required style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none', resize: 'vertical' }}></textarea>
+
+              <button type="submit" style={{ display: 'flex', alignItems: 'center', gap: '10px', backgroundColor: '#5c7853', color: '#ffffff', border: 'none', borderRadius: '6px', padding: '14px 28px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s ease', alignSelf: 'flex-start', boxShadow: '0 4px 12px rgba(92,120,83,0.15)' }}>
+                Send Message
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+
         </div>
-
-        <div className="cta-contact-right" style={{ backgroundImage: `url('/monarch-hotel.jpg')` }}></div>
       </section>
           </div>
         </>
@@ -709,6 +809,10 @@ function App() {
 
       {currentPage === 'smart-assistant' && (
         <SmartAssistantPage setCurrentPage={setCurrentPage} />
+      )}
+
+      {currentPage === 'search' && (
+        <SearchPage setCurrentPage={setCurrentPage} />
       )}
 
       {/* Persistent Chatbot & Quick Search Assistant */}

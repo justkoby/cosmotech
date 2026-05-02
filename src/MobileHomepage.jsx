@@ -61,9 +61,6 @@ export default function MobileHomepage({ setCurrentPage }) {
             <button className="mob-cta-primary" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
               Request Consultation
             </button>
-            <button className="mob-cta-whatsapp" onClick={handleWhatsApp}>
-              WhatsApp Us
-            </button>
           </div>
         </div>
       </section>
@@ -195,13 +192,9 @@ export default function MobileHomepage({ setCurrentPage }) {
         </div>
       </section>
 
-      {/* STICKY BOTTOM CTA */}
       <div className="mob-sticky-bottom-actions">
         <button className="mob-stick-btn-call" onClick={handleCall}>
           📞 Call
-        </button>
-        <button className="mob-stick-btn-wa" onClick={handleWhatsApp}>
-          💬 WhatsApp
         </button>
         <button className="mob-stick-btn-consult" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
           💡 Consult

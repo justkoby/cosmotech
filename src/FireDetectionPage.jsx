@@ -8,7 +8,7 @@ export default function FireDetectionPage({ setCurrentPage }) {
   return (
     <div className="service-detail-page-container fire-theme">
       {/* 1. HERO SECTION */}
-      <section className="service-hero" style={{ backgroundImage: `url('/monarch-hotel.jpg')` }}>
+      <section className="service-hero" style={{ backgroundImage: `url('/fire safety.png')` }}>
         <div className="service-hero-overlay">
           <div className="service-hero-content">
             <span className="service-badge-accent">Life & Property Safety</span>

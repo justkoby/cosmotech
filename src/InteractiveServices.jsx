@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 export default function InteractiveServices({ setCurrentPage }) {
   const [activeIdx, setActiveIdx] = useState(0)
-  const [progress, setProgress] = useState(0)
 
   const servicesList = [
     {
@@ -44,21 +43,14 @@ export default function InteractiveServices({ setCurrentPage }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveIdx((current) => (current + 1) % servicesList.length)
-          return 0
-        }
-        return prev + 1.25
-      })
-    }, 60) // Around 4-5 seconds per service
+      setActiveIdx((prev) => (prev + 1) % servicesList.length)
+    }, 5000)
 
     return () => clearInterval(interval)
-  }, [servicesList.length])
+  }, [activeIdx])
 
   const selectService = (idx) => {
     setActiveIdx(idx)
-    setProgress(0)
   }
 
   return (
@@ -75,10 +67,12 @@ export default function InteractiveServices({ setCurrentPage }) {
                 onClick={() => selectService(idx)}
               >
                 <div className="service-recreated-line-wrapper">
-                  <div 
-                    className="service-recreated-line-fill" 
-                    style={{ height: isActive ? `${progress}%` : '0%' }}
-                  ></div>
+                  {isActive && (
+                    <div 
+                      key={activeIdx} 
+                      className="service-recreated-line-fill active-timer"
+                    ></div>
+                  )}
                 </div>
                 <div className="service-recreated-content">
                   <span className="service-recreated-cat">{svc.category}</span>

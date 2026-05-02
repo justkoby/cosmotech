@@ -8,7 +8,7 @@ export default function SecuritySystemsPage({ setCurrentPage }) {
   return (
     <div className="service-detail-page-container security-theme">
       {/* 1. HERO SECTION */}
-      <section className="service-hero" style={{ backgroundImage: `url('/oxford.webp')` }}>
+      <section className="service-hero" style={{ backgroundImage: `url('/Security Systems.png')` }}>
         <div className="service-hero-overlay dark-glow">
           <div className="service-hero-content">
             <span className="service-badge-accent">Enterprise Security</span>

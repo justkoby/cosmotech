@@ -43,17 +43,39 @@ export default function AboutPage({ setCurrentPage }) {
               Our expertise allows us to design and implement integrated technology solutions for residential, commercial, and institutional environments. We combine engineering expertise with modern technologies to deliver solutions that improve connectivity, security, efficiency, and automation.
             </p>
           </div>
-          <div className="about-who-right">
-            <img src="/2-01.webp" alt="Who we are" className="about-who-img" />
+          <div className="about-who-right" style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center', justifyContent: 'center' }}>
+            <img src="/logo - Copy.png" alt="COSMOTECH Animated Logo" className="about-animated-logo" style={{ maxWidth: '250px', animation: 'floatLogo 3s ease-in-out infinite alternate', filter: 'drop-shadow(0 4px 12px rgba(128, 160, 107, 0.25))' }} />
           </div>
         </div>
       </section>
 
       {/* 3. WHAT WE DO */}
-      <section className="about-process-section">
-        <div className="about-container-inner">
-          <h2 className="about-section-title centered">What We Do</h2>
-          <p className="about-section-subtitle centered">We engineer tailored solutions from initial blueprint to ongoing optimization.</p>
+      <section className="about-process-section" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#0c1b10', color: '#ffffff' }}>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="about-process-video-bg"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 1,
+            opacity: 0.18,
+            pointerEvents: 'none'
+          }}
+        >
+          <source src="/0502(1).webm" type="video/webm" />
+          <source src="/13549420_1920_1080_25fps.mp4" type="video/mp4" />
+        </video>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(12, 27, 16, 0.82)', zIndex: 1 }}></div>
+        <div className="about-container-inner" style={{ position: 'relative', zIndex: 2 }}>
+          <h2 className="about-section-title centered" style={{ color: '#ffffff' }}>What We Do</h2>
+          <p className="about-section-subtitle centered" style={{ color: 'rgba(255,255,255,0.85)' }}>We engineer tailored solutions from initial blueprint to ongoing optimization.</p>
           <div className="about-process-grid">
             <div className="process-block">
               <div className="process-icon-box">
@@ -154,17 +176,22 @@ export default function AboutPage({ setCurrentPage }) {
       {/* 6. LEADERSHIP */}
       <section className="about-leadership-section">
         <div className="about-container-inner">
-          <div className="leadership-message-box">
-            <h2 className="about-section-title">A Message from Our Founder</h2>
-            <p className="about-p founder-text">
-              "At COSMOTECH PROJECTS LTD, we are more than just a technology and security solutions provider; we are innovators, problem-solvers, and trusted partners committed to delivering excellence. Our mission is to transform businesses and institutions through cutting-edge technology, seamless integration, and intelligent security solutions tailored to meet the evolving demands of the digital age."
-            </p>
-            <p className="about-p founder-text">
-              "Our team is made up of passionate professionals who bring expertise, creativity, and dedication to every project. We thrive on collaboration, leveraging our collective strengths to develop innovative solutions that drive efficiency, enhance security, and support sustainable growth."
-            </p>
-            <div className="founder-signature">
-              <strong>Anthony D. Donkor</strong>
-              <span>Lead, Cosmotech Projects Ltd.</span>
+          <div className="leadership-message-box" style={{ display: 'grid', gridTemplateColumns: '1.8fr 1.2fr', gap: '48px', alignItems: 'center' }}>
+            <div>
+              <h2 className="about-section-title">A Message from Our Founder</h2>
+              <p className="about-p founder-text">
+                "At COSMOTECH PROJECTS LTD, we are more than just a technology and security solutions provider; we are innovators, problem-solvers, and trusted partners committed to delivering excellence. Our mission is to transform businesses and institutions through cutting-edge technology, seamless integration, and intelligent security solutions tailored to meet the evolving demands of the digital age."
+              </p>
+              <p className="about-p founder-text">
+                "Our team is made up of passionate professionals who bring expertise, creativity, and dedication to every project. We thrive on collaboration, leveraging our collective strengths to develop innovative solutions that drive efficiency, enhance security, and support sustainable growth."
+              </p>
+              <div className="founder-signature">
+                <strong>Anthony D. Donkor</strong>
+                <span>Lead, Cosmotech Projects Ltd.</span>
+              </div>
+            </div>
+            <div className="founder-img-wrapper" style={{ display: 'flex', justifyContent: 'center' }}>
+              <img src="/pp.webp" alt="Anthony D. Donkor" className="founder-pp-img" style={{ width: '100%', maxWidth: '380px', height: 'auto', borderRadius: '12px', boxShadow: '0 12px 28px rgba(0,0,0,0.15)', objectFit: 'cover' }} />
             </div>
           </div>
 
@@ -213,11 +240,11 @@ export default function AboutPage({ setCurrentPage }) {
       </section>
 
       {/* 8. CTA SECTION */}
-      <section className="about-cta-section">
-        <div className="about-container-inner centered">
-          <h2 className="cta-heading">Let’s Build Smarter Systems Together</h2>
-          <p className="cta-desc">Work with our professional team of expert engineers to transform your technology infrastructure.</p>
-          <button className="about-cta-btn" onClick={() => { setCurrentPage('home'); window.scrollTo(0, document.body.scrollHeight); }}>
+      <section className="about-cta-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '100px 10%', backgroundColor: '#5c7853', color: '#ffffff' }}>
+        <div className="about-container-inner centered" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <h2 className="cta-heading" style={{ fontSize: '42px', fontWeight: 700, marginBottom: '24px', color: '#ffffff' }}>Let’s Build Smarter Systems Together</h2>
+          <p className="cta-desc" style={{ fontSize: '18px', opacity: 0.9, marginBottom: '36px', maxWidth: '650px', color: 'rgba(255,255,255,0.9)' }}>Work with our professional team of expert engineers to transform your technology infrastructure.</p>
+          <button className="about-cta-btn" onClick={() => { setCurrentPage('home'); window.scrollTo(0, document.body.scrollHeight); }} style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '16px 36px', border: 'none', borderRadius: '4px', fontSize: '15px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.3s ease', textTransform: 'uppercase', letterSpacing: '1px' }}>
             Request a Consultation
           </button>
         </div>

@@ -8,7 +8,7 @@ export default function TelecommunicationsPage({ setCurrentPage }) {
   return (
     <div className="service-detail-page-container telecoms-theme">
       {/* 1. HERO SECTION */}
-      <section className="service-hero" style={{ backgroundImage: `url('/2-01.webp')` }}>
+      <section className="service-hero" style={{ backgroundImage: `url('/Telecom Systems.jpeg')` }}>
         <div className="service-hero-overlay">
           <div className="service-hero-content">
             <span className="service-badge-accent">Global Connectivity</span>
