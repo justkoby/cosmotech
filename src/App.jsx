@@ -456,7 +456,7 @@ function App() {
 
         <div className="hero-content-container">
           <h1 className="hero-title">
-            Engineering Smart Technology Infrastructure for Business and Homes
+            Engineering Smart Technology Infrastructure for Businesses and Homes
           </h1>
           <p className="hero-subtitle">
             COSMOTECH PROJECT LTD delivers professional solutions in IT Infrastructure, Telecommunications, Security Systems, Smart Home Automation, and Fire Safety Systems across Ghana.
