@@ -31,6 +31,66 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
 
+  // 1. Contact Form States
+  const [contactName, setContactName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
+  const [contactPhone, setContactPhone] = useState('')
+  const [contactService, setContactService] = useState('')
+  const [contactMessage, setContactMessage] = useState('')
+  const [contactHp, setContactHp] = useState('')
+  const [contactLastSubmit, setContactLastSubmit] = useState(0)
+
+  // 2. Submit Handler
+  const handleContactSubmit = (e) => {
+    e.preventDefault()
+
+    // Honeypot check
+    if (contactHp) {
+      console.warn('Bot submission blocked via honeypot field.')
+      return
+    }
+
+    // Client-side validation
+    if (contactName.trim().length < 2) {
+      alert('Please enter a valid name.')
+      return
+    }
+    if (contactMessage.trim().length < 5) {
+      alert('Please provide more details in the message field.')
+      return
+    }
+
+    // Rate limiting (prevent submitting twice within 5 seconds)
+    const now = Date.now()
+    if (now - contactLastSubmit < 5000) {
+      alert('Please wait a moment before resubmitting.')
+      return
+    }
+    setContactLastSubmit(now)
+
+    // Send via mailto
+    const subject = encodeURIComponent(`New Contact Message from ${contactName}`)
+    const body = encodeURIComponent(
+      `Full Name: ${contactName}\n` +
+      `Email: ${contactEmail}\n` +
+      `Phone Number: ${contactPhone || 'N/A'}\n` +
+      `Interest Area: ${contactService || 'N/A'}\n\n` +
+      `Project Details/Requirements:\n${contactMessage}`
+    )
+
+    window.location.href = `mailto:info@cosmotechprojects.com?subject=${subject}&body=${body}`
+
+    // Reset fields after successful submission
+    setContactName('')
+    setContactEmail('')
+    setContactPhone('')
+    setContactService('')
+    setContactMessage('')
+    setContactHp('')
+
+    alert('Your message has been prepared! Thank you.')
+  }
+
   React.useEffect(() => {
     window.history.replaceState({ page: currentPage }, '', '')
 
@@ -92,7 +152,7 @@ function App() {
       title = "Sectors & Industries Served | COSMOTECH Project Ltd"
       desc = "Specialized high-availability systems tailored for hotels, data centers, hospitals, and residential spaces."
     } else if (currentPage === 'process') {
-      title = "Our Delivery Process | COSMOTECH Project Ltd"
+      title = "Our Project Delivery Process | COSMOTECH Project Ltd"
       desc = "Understand how our structured engineering process takes your project from initial consultation to support."
     } else if (currentPage === 'faq') {
       title = "FAQ & Inquiries | COSMOTECH Project Ltd"
@@ -739,15 +799,15 @@ function App() {
           <div className="contact-form-card" style={{ backgroundColor: '#ffffff', borderRadius: '12px', padding: '40px', boxShadow: '0 8px 30px rgba(0,0,0,0.03)', border: '1px solid #f1f5f9' }}>
             <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#1e293b', marginBottom: '24px' }}>Send Us a Message</h2>
             
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={(e) => e.preventDefault()}>
+            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={handleContactSubmit}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-                <input type="text" placeholder="Your Name" required style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
-                <input type="email" placeholder="Your Email" required style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
+                <input type="text" placeholder="Your Name" required value={contactName} onChange={(e) => setContactName(e.target.value)} style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
+                <input type="email" placeholder="Your Email" required value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
               </div>
 
-              <input type="tel" placeholder="Phone Number (Optional)" style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
+              <input type="tel" placeholder="Phone Number (Optional)" value={contactPhone} onChange={(e) => setContactPhone(e.target.value)} style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} />
 
-              <select style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} required>
+              <select value={contactService} onChange={(e) => setContactService(e.target.value)} style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none' }} required>
                 <option value="">Select Service Interest</option>
                 <option value="IT Infrastructure">IT Infrastructure</option>
                 <option value="Security Systems">Security Systems</option>
@@ -756,13 +816,17 @@ function App() {
                 <option value="Fire Safety">Fire Detection</option>
               </select>
 
-              <textarea placeholder="Your Message / Project Details" rows="4" required style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none', resize: 'vertical' }}></textarea>
+              <textarea placeholder="Your Message / Project Details" rows="4" required value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} style={{ width: '100%', padding: '14px 20px', border: '1px solid #e2e8f0', borderRadius: '6px', fontSize: '14px', color: '#334155', backgroundColor: '#fafafa', outline: 'none', resize: 'vertical' }}></textarea>
+
+              {/* Honeypot field for bot protection */}
+              <input type="text" name="contactHp" value={contactHp} onChange={(e) => setContactHp(e.target.value)} style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
 
               <button type="submit" style={{ display: 'flex', alignItems: 'center', gap: '10px', backgroundColor: '#5c7853', color: '#ffffff', border: 'none', borderRadius: '6px', padding: '14px 28px', fontSize: '15px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.3s ease', alignSelf: 'flex-start', boxShadow: '0 4px 12px rgba(92,120,83,0.15)' }}>
                 Send Message
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
               </button>
             </form>
+
           </div>
 
         </div>

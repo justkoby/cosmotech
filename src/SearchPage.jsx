@@ -130,7 +130,7 @@ export default function SearchPage({ setCurrentPage }) {
     },
     {
       id: 'process',
-      title: 'Our Delivery Process',
+      title: 'Our Project Delivery Process',
       category: 'How We Work',
       description: 'Learn how our structured engineering process takes your project from design and supply to support.',
       keywords: 'process delivery how we work consulting design installation support maintenance testing commissioning'

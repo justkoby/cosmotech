@@ -7,10 +7,12 @@ export default function ConsultationPage({ setCurrentPage }) {
     phone: '',
     company: '',
     service: '',
-    message: ''
+    message: '',
+    hpField: ''
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [lastSubmitTime, setLastSubmitTime] = useState(0)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -23,6 +25,30 @@ export default function ConsultationPage({ setCurrentPage }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    // 1. Honeypot check
+    if (formData.hpField) {
+      console.warn('Bot submission blocked via honeypot field.')
+      return
+    }
+
+    // 2. Client-side validation
+    if (formData.name.trim().length < 2) {
+      alert('Please enter a valid full name.')
+      return
+    }
+    if (formData.message.trim().length < 5) {
+      alert('Please provide more details in the message field.')
+      return
+    }
+
+    // 3. Rate limiting check (e.g., prevent submissions within 5 seconds)
+    const currentTime = Date.now()
+    if (currentTime - lastSubmitTime < 5000) {
+      alert('Please wait a moment before resubmitting.')
+      return
+    }
+    setLastSubmitTime(currentTime)
 
     const subject = encodeURIComponent(`New Consultation Request from ${formData.name}`)
     const body = encodeURIComponent(
@@ -39,6 +65,7 @@ export default function ConsultationPage({ setCurrentPage }) {
 
     setIsSubmitted(true)
   }
+
 
   return (
     <div className="consultation-page-container">
@@ -169,6 +196,17 @@ export default function ConsultationPage({ setCurrentPage }) {
                 ></textarea>
               </div>
 
+              {/* Honeypot field for bot protection */}
+              <input 
+                type="text" 
+                name="hpField" 
+                value={formData.hpField} 
+                onChange={handleChange} 
+                style={{ display: 'none' }} 
+                tabIndex="-1" 
+                autoComplete="off" 
+              />
+
               <button 
                 type="submit" 
                 className="consult-cta-btn" 
@@ -176,6 +214,7 @@ export default function ConsultationPage({ setCurrentPage }) {
               >
                 Submit Consultation Request &rarr;
               </button>
+
             </form>
           )}
         </div>

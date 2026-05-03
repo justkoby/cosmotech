@@ -15,9 +15,12 @@ export default function SmartAssistantPage({ setCurrentPage }) {
   const [qServices, setQServices] = useState('')
   const [qBudget, setQBudget] = useState('')
   const [quoteSuccess, setQuoteSuccess] = useState(false)
+  const [qHpField, setQHpField] = useState('')
+  const [qLastSubmit, setQLastSubmit] = useState(0)
 
   // Interactive Selector State
   const [selectedGoal, setSelectedGoal] = useState('')
+
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -67,9 +70,26 @@ export default function SmartAssistantPage({ setCurrentPage }) {
   // Quick Quote Calculation
   const handleQuoteSubmit = (e) => {
     e.preventDefault()
-    if (!qLocation || !qServices || !qBudget) return
+    if (qHpField) {
+      console.warn('Bot submission blocked via honeypot field.')
+      return
+    }
+
+    if (qLocation.trim().length < 2 || qServices.trim().length < 4) {
+      alert('Please fill in all the required details.')
+      return
+    }
+
+    const currentTime = Date.now()
+    if (currentTime - qLastSubmit < 5000) {
+      alert('Please wait a moment before resubmitting.')
+      return
+    }
+    setQLastSubmit(currentTime)
+
     setQuoteSuccess(true)
   }
+
 
   return (
     <div className="assistant-page-container">
@@ -216,10 +236,14 @@ export default function SmartAssistantPage({ setCurrentPage }) {
                     </select>
                   </div>
 
+                  {/* Honeypot field for bot protection */}
+                  <input type="text" name="qHpField" value={qHpField} onChange={(e) => setQHpField(e.target.value)} style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
+
                   <button type="submit" className="quote-submit-btn">
                     Submit Request &rarr;
                   </button>
                 </form>
+
               ) : (
                 <div className="quote-success-box">
                   <span className="success-icon">🎉</span>
