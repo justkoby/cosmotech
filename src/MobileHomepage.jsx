@@ -59,7 +59,7 @@ export default function MobileHomepage({ setCurrentPage }) {
           </p>
           <div className="mob-hero-ctas">
             <button className="mob-cta-primary" onClick={() => setCurrentPage('consultation')}>
-              Request Consultation
+              Request for Consultation
             </button>
             <button className="mob-cta-whatsapp" onClick={handleWhatsApp}>
               Chat via WhatsApp
@@ -210,7 +210,7 @@ export default function MobileHomepage({ setCurrentPage }) {
         <p className="mob-final-desc">Talk to COSMOTECH engineers today.</p>
         <div className="mob-final-ctas">
           <button className="mob-final-btn-primary" onClick={() => setCurrentPage('consultation')}>
-            Request Consultation
+            Request for Consultation
           </button>
           <button className="mob-final-btn-secondary" onClick={handleCall}>
             Call Now

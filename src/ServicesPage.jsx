@@ -61,7 +61,7 @@ export default function ServicesPage({ setCurrentPage }) {
               We design, install, and integrate advanced infrastructure solutions for homes, businesses, and institutions.
             </p>
             <button style={{ backgroundColor: '#f59e0b', color: '#0c1b10', padding: '14px 24px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', width: '100%' }} onClick={() => { setCurrentPage('home'); setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 100); }}>
-              Request Consultation
+              Request for Consultation
             </button>
           </div>
         </section>
@@ -154,7 +154,7 @@ export default function ServicesPage({ setCurrentPage }) {
             Work with COSMOTECH engineers to transform your technology infrastructure today.
           </p>
           <button style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '14px 28px', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 700, width: '100%', textTransform: 'uppercase' }} onClick={() => { setCurrentPage('home'); window.scrollTo(0, document.body.scrollHeight); }}>
-            Request Consultation
+            Request for Consultation
           </button>
         </section>
       </div>
@@ -232,8 +232,8 @@ export default function ServicesPage({ setCurrentPage }) {
                 <li>Network security systems</li>
                 <li>Data center infrastructure</li>
               </ul>
-              <button className="service-detail-cta" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-                Request a consultation &rarr;
+              <button className="service-detail-cta" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+                Request for Consultation &rarr;
               </button>
             </div>
             <div className="service-detail-image" style={{ backgroundImage: `url('/2-01.webp')` }}></div>
@@ -253,8 +253,8 @@ export default function ServicesPage({ setCurrentPage }) {
                 <li>IP telephony solutions</li>
                 <li>Enterprise connectivity</li>
               </ul>
-              <button className="service-detail-cta" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-                Request a consultation &rarr;
+              <button className="service-detail-cta" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+                Request for Consultation &rarr;
               </button>
             </div>
             <div className="service-detail-image" style={{ backgroundImage: `url('/oxford.webp')` }}></div>
@@ -275,8 +275,8 @@ export default function ServicesPage({ setCurrentPage }) {
                 <li>Video intercom systems</li>
                 <li>Integrated monitoring</li>
               </ul>
-              <button className="service-detail-cta" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-                Request a consultation &rarr;
+              <button className="service-detail-cta" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+                Request for Consultation &rarr;
               </button>
             </div>
             <div className="service-detail-image" style={{ backgroundImage: `url('/Accra-City-Hotel.png')` }}></div>
@@ -297,8 +297,8 @@ export default function ServicesPage({ setCurrentPage }) {
                 <li>Centralized control apps</li>
                 <li>Integrated security</li>
               </ul>
-              <button className="service-detail-cta" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-                Request a consultation &rarr;
+              <button className="service-detail-cta" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+                Request for Consultation &rarr;
               </button>
             </div>
             <div className="service-detail-image" style={{ backgroundImage: `url('/Anfield Residence.jpg')` }}></div>
@@ -319,8 +319,8 @@ export default function ServicesPage({ setCurrentPage }) {
                 <li>Safety monitoring</li>
                 <li>Continuous maintenance</li>
               </ul>
-              <button className="service-detail-cta" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-                Request a consultation &rarr;
+              <button className="service-detail-cta" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+                Request for Consultation &rarr;
               </button>
             </div>
             <div className="service-detail-image" style={{ backgroundImage: `url('/monarch-hotel.jpg')` }}></div>
@@ -364,8 +364,8 @@ export default function ServicesPage({ setCurrentPage }) {
             <p className="cta-main-desc">
               Let our experienced team of professional engineers design and implement your advanced technological infrastructure.
             </p>
-            <button className="cta-action-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-              Request a Consultation
+            <button className="cta-action-btn" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+              Request for Consultation
             </button>
           </div>
         </section>

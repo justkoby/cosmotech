@@ -11,13 +11,13 @@ export default function ProcessPage({ setCurrentPage }) {
       <section className="about-hero" style={{ backgroundImage: `url('/1-01.webp')` }}>
         <div className="about-hero-overlay">
           <div className="about-hero-content">
-            <span className="about-badge" style={{ color: '#f59e0b' }}>Our Process</span>
+            <span className="about-badge" style={{ color: '#f59e0b' }}>Our Project Delivery Process</span>
             <h1 className="about-hero-title">From Concept to Connected Systems</h1>
             <p className="about-hero-subtext" style={{ marginBottom: '24px' }}>
               COSMOTECH follows a structured engineering process to design, install, integrate, and support reliable technology systems for homes, businesses, and institutions.
             </p>
-            <button className="process-hero-cta" style={{ backgroundColor: '#f59e0b', color: '#0c1b10', padding: '14px 24px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', cursor: 'pointer' }} onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-              Request Consultation &rarr;
+            <button className="process-hero-cta" style={{ backgroundColor: '#f59e0b', color: '#0c1b10', padding: '14px 24px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', cursor: 'pointer' }} onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+              Request for Consultation &rarr;
             </button>
           </div>
         </div>
@@ -146,8 +146,8 @@ export default function ProcessPage({ setCurrentPage }) {
           <p className="cta-main-desc">
             Talk to COSMOTECH engineers and let's design the right system for your environment.
           </p>
-          <button className="cta-action-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-            Request Consultation
+          <button className="cta-action-btn" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+            Request for Consultation
           </button>
         </div>
       </section>

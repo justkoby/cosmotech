@@ -65,8 +65,8 @@ export default function UrbanApartmentsPage({ setCurrentPage }) {
         <section style={{ padding: '48px 20px', backgroundColor: '#5c7853', color: '#ffffff', textAlign: 'center' }}>
           <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>Build a Smarter Environment</h2>
           <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.9)', marginBottom: '24px', lineHeight: '1.5' }}>Ensure maximum lifestyle convenience and physical security. Let’s talk.</p>
-          <button style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '14px 28px', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 700, width: '100%', textTransform: 'uppercase' }} onClick={() => { setCurrentPage('home'); window.scrollTo(0, document.body.scrollHeight); }}>
-            Request Consultation
+          <button style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '14px 28px', border: 'none', borderRadius: '4px', fontSize: '13px', fontWeight: 700, width: '100%', textTransform: 'uppercase' }} onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+            Request for Consultation
           </button>
         </section>
       </div>
@@ -192,8 +192,8 @@ export default function UrbanApartmentsPage({ setCurrentPage }) {
           <div className="case-cta-inner">
             <h2 className="case-cta-title">Upgrade Your Development with Smart Infrastructure</h2>
             <p className="case-cta-desc">Work with COSMOTECH engineers to deploy an advanced, high-performing technical ecosystem today.</p>
-            <button className="case-cta-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-              Request Consultation
+            <button className="case-cta-btn" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+              Request for Consultation
             </button>
           </div>
         </section>

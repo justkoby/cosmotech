@@ -29,7 +29,7 @@ export default function AboutPage({ setCurrentPage }) {
               COSMOTECH delivers advanced systems that power modern homes and institutions across Ghana.
             </p>
             <button className="mob-cta-primary" style={{ backgroundColor: '#f59e0b', color: '#0c1b10', padding: '14px 24px', borderRadius: '4px', border: 'none', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase', width: '100%' }} onClick={() => { setCurrentPage('home'); setTimeout(() => window.scrollTo(0, document.body.scrollHeight), 100); }}>
-              Request Consultation
+              Request for Consultation
             </button>
           </div>
         </section>
@@ -128,7 +128,7 @@ export default function AboutPage({ setCurrentPage }) {
             Bring your residential, commercial, or institutional projects to life with our expert engineering team.
           </p>
           <button style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '14px 28px', border: 'none', borderRadius: '4px', fontSize: '14px', fontWeight: 700, width: '100%', textTransform: 'uppercase' }} onClick={() => { setCurrentPage('home'); window.scrollTo(0, document.body.scrollHeight); }}>
-            Request Consultation
+            Request for Consultation
           </button>
         </section>
       </div>
@@ -335,8 +335,8 @@ export default function AboutPage({ setCurrentPage }) {
           <div className="about-container-inner centered" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
             <h2 className="cta-heading" style={{ fontSize: '42px', fontWeight: 700, marginBottom: '24px', color: '#ffffff' }}>Let’s Build Smarter Systems Together</h2>
             <p className="cta-desc" style={{ fontSize: '18px', opacity: 0.9, marginBottom: '36px', maxWidth: '650px', color: 'rgba(255,255,255,0.9)' }}>Work with our professional team of expert engineers to transform your technology infrastructure.</p>
-            <button className="about-cta-btn" onClick={() => { setCurrentPage('home'); window.scrollTo(0, document.body.scrollHeight); }} style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '16px 36px', border: 'none', borderRadius: '4px', fontSize: '15px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.3s ease', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              Request a Consultation
+            <button className="about-cta-btn" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }} style={{ backgroundColor: '#ffffff', color: '#5c7853', padding: '16px 36px', border: 'none', borderRadius: '4px', fontSize: '15px', fontWeight: 700, cursor: 'pointer', transition: 'all 0.3s ease', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              Request for Consultation
             </button>
           </div>
         </section>

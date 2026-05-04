@@ -226,7 +226,7 @@ function App() {
             </ul>
             <div className="mob-nav-cta-wrapper">
               <button className="mob-nav-cta-btn" onClick={() => { setCurrentPage('consultation'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }}>
-                Request Consultation
+                Request for Consultation
               </button>
             </div>
           </div>
@@ -515,11 +515,11 @@ function App() {
             COSMOTECH PROJECT LTD delivers professional solutions in IT Infrastructure, Telecommunications, Security Systems, Smart Home Automation, and Fire Safety Systems across Ghana.
           </p>
           <div className="hero-ctas">
-            <a href="#" className="cta-primary">
-              Request a Consultation
+            <a href="#" className="cta-primary" onClick={(e) => { e.preventDefault(); setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+              Request for Consultation
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
-            <a href="#" className="cta-secondary">
+            <a href="#" className="cta-secondary" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); window.scrollTo(0, 0); }}>
               View Our Projects
             </a>
           </div>
@@ -924,7 +924,7 @@ function App() {
         {/* Sticky Sidebar CTA */}
         <div className="sticky-sidebar-cta">
           <button className="sticky-cta-btn" onClick={() => { setCurrentPage('home'); setTimeout(() => { window.scrollTo(0, document.body.scrollHeight); }, 100); }}>
-            Request Consultation
+            Request for Consultation
           </button>
         </div>
 
