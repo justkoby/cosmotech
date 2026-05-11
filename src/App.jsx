@@ -23,6 +23,8 @@ import MobileHomepage from './MobileHomepage'
 import InteractiveServices from './InteractiveServices'
 import SearchPage from './SearchPage'
 import ConsultationPage from './ConsultationPage'
+import MaintenanceMode from './MaintenanceMode'
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState(() => {
@@ -166,6 +168,13 @@ function App() {
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) metaDesc.setAttribute('content', desc)
   }, [currentPage])
+
+  // Set to true to enable maintenance mode (blank white screen)
+  const isMaintenanceMode = true;
+
+  if (isMaintenanceMode) {
+    return <MaintenanceMode />;
+  }
 
   return (
     <div className="main-container">
