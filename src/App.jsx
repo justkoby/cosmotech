@@ -170,7 +170,7 @@ function App() {
   }, [currentPage])
 
   // Set to true to enable maintenance mode (blank white screen)
-  const isMaintenanceMode = true;
+  const isMaintenanceMode = false;
 
   if (isMaintenanceMode) {
     return <MaintenanceMode />;
