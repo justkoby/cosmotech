@@ -53,7 +53,7 @@ export default function MobileHomepage({ setCurrentPage }) {
       <section className="mob-hero" style={{ backgroundImage: "linear-gradient(135deg, rgba(15, 34, 20, 0.85) 0%, rgba(15, 34, 20, 0.5) 100%), url('/1-01.webp')" }}>
         <div className="mob-hero-content">
           <span className="mob-badge-accent">Intelligent Systems</span>
-          <h1 className="mob-hero-title">Smart Technology Systems for Homes & Businesses</h1>
+          <h1 className="mob-hero-title">Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes</h1>
           <p className="mob-hero-desc">
             IT infrastructure, security, automation, telecoms, and fire safety solutions across Ghana.
           </p>

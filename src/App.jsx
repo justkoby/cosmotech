@@ -28,7 +28,7 @@ import MaintenanceMode from './MaintenanceMode'
 
 function App() {
   const [currentPage, setCurrentPage] = useState(() => {
-    return localStorage.getItem('cosmotech_current_page') || 'home'
+    return sessionStorage.getItem('cosmotech_current_page') || 'home'
   })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false)
@@ -109,7 +109,7 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    localStorage.setItem('cosmotech_current_page', currentPage)
+    sessionStorage.setItem('cosmotech_current_page', currentPage)
     if (!window.history.state || window.history.state.page !== currentPage) {
       window.history.pushState({ page: currentPage }, '', '')
     }
@@ -133,7 +133,7 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    localStorage.setItem('cosmotech_current_page', currentPage)
+    sessionStorage.setItem('cosmotech_current_page', currentPage)
 
     let title = "COSMOTECH Project Ltd | Intelligent Technology Systems"
     let desc = "We design, install, and integrate advanced IT, telecommunications, security, and smart automation systems across Ghana."
@@ -518,7 +518,7 @@ function App() {
 
         <div className="hero-content-container">
           <h1 className="hero-title">
-            Engineering Smart Technology Infrastructure for Businesses and Homes
+            Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes
           </h1>
           <p className="hero-subtitle">
             COSMOTECH PROJECT LTD delivers professional solutions in IT Infrastructure, Telecommunications, Security Systems, Smart Home Automation, and Fire Safety Systems across Ghana.

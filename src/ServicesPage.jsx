@@ -56,7 +56,7 @@ export default function ServicesPage({ setCurrentPage }) {
         <section className="mob-page-hero" style={{ backgroundImage: "linear-gradient(rgba(12, 27, 16, 0.8), rgba(12, 27, 16, 0.9)), url('/1-01.webp')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '60px 20px', color: '#ffffff', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
           <div>
             <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', padding: '4px 10px', borderRadius: '4px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Our Expertise</span>
-            <h1 style={{ fontSize: '30px', fontWeight: 700, margin: '16px 0', lineHeight: '1.25' }}>Engineering Smart Technology Systems</h1>
+            <h1 style={{ fontSize: '30px', fontWeight: 700, margin: '16px 0', lineHeight: '1.25' }}>Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes</h1>
             <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.85)', marginBottom: '24px', lineHeight: '1.5' }}>
               We design, install, and integrate advanced infrastructure solutions for homes, businesses, and institutions.
             </p>
@@ -166,7 +166,7 @@ export default function ServicesPage({ setCurrentPage }) {
           <div className="services-hero-overlay">
             <div className="services-hero-content">
               <span className="services-badge-accent">Our Expertise</span>
-              <h1 className="services-hero-title">Engineering Smart Technology Systems</h1>
+              <h1 className="services-hero-title">Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes</h1>
               <p className="services-hero-subtext">
                 We design, install, and integrate advanced infrastructure solutions for homes, businesses, and institutions.
               </p>
