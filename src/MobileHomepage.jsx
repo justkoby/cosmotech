@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { client } from './sanityClient'
 
 export default function MobileHomepage({ setCurrentPage }) {
   const [openAccordion, setOpenAccordion] = useState(null)
@@ -19,7 +20,38 @@ export default function MobileHomepage({ setCurrentPage }) {
     window.location.href = 'tel:+233531018219'
   }
 
-  const mobileServices = [
+  const [homepageData, setHomepageData] = useState(null)
+  const [services, setServices] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [hp, svcs] = await Promise.all([
+          client.fetch(`*[_type == "homepage"][0]`),
+          client.fetch(`*[_type == "service"]`)
+        ])
+        if (hp) setHomepageData(hp)
+        if (svcs && svcs.length > 0) setServices(svcs)
+      } catch (error) {
+        console.error("Error fetching Sanity data:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchData()
+  }, [])
+
+  const defaultHero = {
+    heroTitle: "Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes",
+    heroSubtitle: "IT infrastructure, security, automation, telecoms, and fire safety solutions across Ghana."
+  }
+
+  const mobileServices = services.length > 0 ? services.map(s => ({
+    title: s.title,
+    desc: s.description,
+    route: s.slug?.current || 'home'
+  })) : [
     {
       title: 'IT Infrastructure',
       desc: 'High-availability server deployments, network backbones, and enterprise firewalls.',
@@ -53,9 +85,9 @@ export default function MobileHomepage({ setCurrentPage }) {
       <section className="mob-hero" style={{ backgroundImage: "linear-gradient(135deg, rgba(15, 34, 20, 0.85) 0%, rgba(15, 34, 20, 0.5) 100%), url('/1-01.webp')" }}>
         <div className="mob-hero-content">
           <span className="mob-badge-accent">Intelligent Systems</span>
-          <h1 className="mob-hero-title">Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes</h1>
+          <h1 className="mob-hero-title">{homepageData?.heroTitle || defaultHero.heroTitle}</h1>
           <p className="mob-hero-desc">
-            IT infrastructure, security, automation, telecoms, and fire safety solutions across Ghana.
+            {homepageData?.heroSubtitle || defaultHero.heroSubtitle}
           </p>
           <div className="mob-hero-ctas">
             <button className="mob-cta-primary" onClick={() => setCurrentPage('consultation')}>

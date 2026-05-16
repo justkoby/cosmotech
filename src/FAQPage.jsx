@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from 'react'
+import { client } from './sanityClient'
 
 export default function FAQPage({ setCurrentPage }) {
   const [activeTab, setActiveTab] = useState('general')
   const [openIndex, setOpenIndex] = useState(0)
 
+  const [sanityFaqs, setSanityFaqs] = useState([])
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    async function fetchFaqs() {
+      try {
+        const data = await client.fetch(`*[_type == "faq"]`)
+        if (data && data.length > 0) {
+          setSanityFaqs(data)
+        }
+      } catch (error) {
+        console.error("Error fetching FAQs:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchFaqs()
   }, [])
 
   const categories = [
@@ -16,68 +33,40 @@ export default function FAQPage({ setCurrentPage }) {
     { id: 'support', label: 'Support' }
   ]
 
-  const faqs = {
+  const fallbackFaqs = {
     general: [
-      {
-        q: 'What does COSMOTECH specialize in?',
-        a: 'COSMOTECH PROJECT LTD specializes in IT infrastructure, telecommunications systems, security systems, smart home automation, and fire detection systems.'
-      },
-      {
-        q: 'Where are your services available?',
-        a: 'We operate across Ghana, delivering solutions in Accra and other regions depending on project requirements.'
-      },
-      {
-        q: 'Why should I choose COSMOTECH?',
-        a: 'We combine engineering expertise, integrated solutions, and reliable support to deliver systems that are built for performance and long-term use.'
-      }
+      { q: 'What does COSMOTECH specialize in?', a: 'COSMOTECH PROJECT LTD specializes in IT infrastructure, telecommunications systems, security systems, smart home automation, and fire detection systems.' },
+      { q: 'Where are your services available?', a: 'We operate across Ghana, delivering solutions in Accra and other regions depending on project requirements.' },
+      { q: 'Why should I choose COSMOTECH?', a: 'We combine engineering expertise, integrated solutions, and reliable support to deliver systems that are built for performance and long-term use.' }
     ],
     services: [
-      {
-        q: 'Do you handle both small and large projects?',
-        a: 'Yes. We work on a wide range of projects, from residential installations to large-scale infrastructure systems for businesses and institutions.'
-      },
-      {
-        q: 'Can you combine multiple systems into one solution?',
-        a: 'Yes. We specialize in integrated systems where security, infrastructure, automation, and communication technologies work together seamlessly.'
-      },
-      {
-        q: 'Do you supply equipment as well as installation?',
-        a: 'Yes. We provide both equipment and professional installation as part of our end-to-end solutions.'
-      }
+      { q: 'Do you handle both small and large projects?', a: 'Yes. We work on a wide range of projects, from residential installations to large-scale infrastructure systems for businesses and institutions.' },
+      { q: 'Can you combine multiple systems into one solution?', a: 'Yes. We specialize in integrated systems where security, infrastructure, automation, and communication technologies work together seamlessly.' },
+      { q: 'Do you supply equipment as well as installation?', a: 'Yes. We provide both equipment and professional installation as part of our end-to-end solutions.' }
     ],
     process: [
-      {
-        q: 'What happens after I request a consultation?',
-        a: 'Our team will assess your requirements, evaluate your site if necessary, and propose a tailored solution based on your needs.'
-      },
-      {
-        q: 'How long does a typical project take?',
-        a: 'Project timelines vary depending on complexity and scale. Smaller installations take days, while larger projects may take several weeks.'
-      }
+      { q: 'What happens after I request a consultation?', a: 'Our team will assess your requirements, evaluate your site if necessary, and propose a tailored solution based on your needs.' },
+      { q: 'How long does a typical project take?', a: 'Project timelines vary depending on complexity and scale. Smaller installations take days, while larger projects may take several weeks.' }
     ],
     pricing: [
-      {
-        q: 'How much do your services cost?',
-        a: 'Pricing depends on the type of system, size, and requirements. We provide quotes after evaluating your exact requirements.'
-      },
-      {
-        q: 'Do you offer consultations before pricing?',
-        a: 'Yes. We typically assess your requirements first before providing a detailed quote.'
-      }
+      { q: 'How much do your services cost?', a: 'Pricing depends on the type of system, size, and requirements. We provide quotes after evaluating your exact requirements.' },
+      { q: 'Do you offer consultations before pricing?', a: 'Yes. We typically assess your requirements first before providing a detailed quote.' }
     ],
     support: [
-      {
-        q: 'Do you provide after-installation support?',
-        a: 'Yes. We offer ongoing maintenance, system monitoring, and technical support to ensure long-term performance.'
-      },
-      {
-        q: 'Can systems be upgraded later?',
-        a: 'Yes. Our solutions are designed to be scalable, allowing for upgrades and expansion as your needs grow.'
-      }
+      { q: 'Do you provide after-installation support?', a: 'Yes. We offer ongoing maintenance, system monitoring, and technical support to ensure long-term performance.' },
+      { q: 'Can systems be upgraded later?', a: 'Yes. Our solutions are designed to be scalable, allowing for upgrades and expansion as your needs grow.' }
     ]
   }
 
-  const activeFaqs = faqs[activeTab] || []
+  // Group Sanity FAQs by category
+  const groupedFaqs = sanityFaqs.reduce((acc, faq) => {
+    const cat = faq.category || 'general'
+    if (!acc[cat]) acc[cat] = []
+    acc[cat].push({ q: faq.question, a: faq.answer })
+    return acc
+  }, {})
+
+  const activeFaqs = (sanityFaqs.length > 0 ? groupedFaqs[activeTab] : fallbackFaqs[activeTab]) || []
 
   return (
     <div className="faq-page-container">

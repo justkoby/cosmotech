@@ -1,0 +1,82 @@
+{
+  "homepage": {
+    "heroTitle": "Engineering Smart Technology Infrastructure for Businesses, Institutions and Homes",
+    "heroSubtitle": "IT infrastructure, security, automation, telecoms, and fire safety solutions across Ghana.",
+    "heroBadge": "Intelligent Systems",
+    "welcomeVideo": "https://www.youtube.com/watch?v=..."
+  },
+  "services": [
+    {
+      "title": "IT Infrastructure",
+      "description": "High-availability server deployments, network backbones, and enterprise firewalls.",
+      "route": "service-it",
+      "features": ["Server Deployment", "Network Infrastructure", "Firewall Configuration", "Data Center Management"]
+    },
+    {
+      "title": "Security Systems",
+      "description": "Real-time surveillance, smart multi-zone alarms, and biometric access controls.",
+      "route": "service-security",
+      "features": ["CCTV Surveillance Systems", "Access Control Systems", "Intruder Alarm Systems", "Video Intercom Systems", "Integrated Security Platforms"]
+    },
+    {
+      "title": "Smart Automation",
+      "description": "Integrated convenience including smart climate, lighting, and entertainment.",
+      "route": "service-automation",
+      "features": ["Smart Lighting", "Climate Control", "Multi-room Audio", "Home Theater Integration"]
+    },
+    {
+      "title": "Telecommunications",
+      "description": "Redundant communication paths, unified enterprise PBX, and fiber infrastructure.",
+      "route": "service-telecoms",
+      "features": ["IP PBX Systems", "Fiber Optic Cabling", "Unified Communications", "Wireless Networks"]
+    },
+    {
+      "title": "Fire Detection",
+      "description": "Rapid hazard notification systems, addressable fire alarms, and continuous coverage.",
+      "route": "service-fire",
+      "features": ["Smoke Detectors", "Fire Alarm Panels", "Heat Sensors", "Emergency Lighting"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Accra City Phase 2",
+      "category": "Security & Infrastructure",
+      "image": "/Accra-City-Hotel.png",
+      "slug": "case-study-accra"
+    },
+    {
+      "title": "Blue Valley Specialist Hospital",
+      "category": "Healthcare Infrastructure",
+      "image": "/blue-valley.png",
+      "slug": "case-study-blue-valley"
+    },
+    {
+      "title": "GOIL PLC Headquarters",
+      "category": "Enterprise Networks & Infrastructure",
+      "image": "/goil-plc.jpg",
+      "slug": "case-study-goil"
+    }
+  ],
+  "faqs": [
+    { "q": "What does COSMOTECH specialize in?", "a": "COSMOTECH PROJECT LTD specializes in IT infrastructure, telecommunications systems, security systems, smart home automation, and fire detection systems.", "cat": "general" },
+    { "q": "Where are your services available?", "a": "We operate across Ghana, delivering solutions in Accra and other regions depending on project requirements.", "cat": "general" },
+    { "q": "Why should I choose COSMOTECH?", "a": "We combine engineering expertise, integrated solutions, and reliable support to deliver systems that are built for performance and long-term use.", "cat": "general" },
+    { "q": "Do you handle both small and large projects?", "a": "Yes. We work on a wide range of projects, from residential installations to large-scale infrastructure systems for businesses and institutions.", "cat": "services" },
+    { "q": "Can you combine multiple systems into one solution?", "a": "Yes. We specialize in integrated systems where security, infrastructure, automation, and communication technologies work together seamlessly.", "cat": "services" },
+    { "q": "Do you supply equipment as well as installation?", "a": "Yes. We provide both equipment and professional installation as part of our end-to-end solutions.", "cat": "services" },
+    { "q": "What happens after I request a consultation?", "a": "Our team will assess your requirements, evaluate your site if necessary, and propose a tailored solution based on your needs.", "cat": "process" },
+    { "q": "How long does a typical project take?", "a": "Project timelines vary depending on complexity and scale. Smaller installations take days, while larger projects may take several weeks.", "cat": "process" },
+    { "q": "How much do your services cost?", "a": "Pricing depends on the type of system, size, and requirements. We provide quotes after evaluating your exact requirements.", "cat": "pricing" },
+    { "q": "Do you offer consultations before pricing?", "a": "Yes. We typically assess your requirements first before providing a detailed quote.", "cat": "pricing" },
+    { "q": "Do you provide after-installation support?", "a": "Yes. We offer ongoing maintenance, system monitoring, and technical support to ensure long-term performance.", "cat": "support" },
+    { "q": "Can systems be upgraded later?", "a": "Yes. Our solutions are designed to be scalable, allowing for upgrades and expansion as your needs grow.", "cat": "support" }
+  ],
+  "processSteps": [
+    { "order": 1, "title": "Consultation", "desc": "We begin by understanding your project goals, environment, budget, and technical requirements. This allows our team to outline exactly how technology can improve your operational workflows or everyday lifestyle." },
+    { "order": 2, "title": "Site Assessment", "desc": "Our team thoroughly evaluates your physical space, existing infrastructure, risks, and performance limitations. This prevents unneeded surprises during physical deployment." },
+    { "order": 3, "title": "System Design", "desc": "We develop a tailored, compliant system architecture covering advanced equipment choice, placement, network integration, scalability, and bandwidth limit planning." },
+    { "order": 4, "title": "Installation & Quality Control", "desc": "Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations. We maintain stringent quality control and assurance at every phase of deployment." },
+    { "order": 5, "title": "Integration & Testing", "desc": "We connect all technology components into one working system and test performance, reliability, and usability end-to-end." },
+    { "order": 6, "title": "Support & Maintenance", "desc": "After completion, we provide ongoing support, preventative testing, hardware checks, and continuous technical assistance." }
+  ]
+}

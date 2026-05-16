@@ -1,0 +1,25 @@
+{
+  "name": "cosmotech-studio",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "graphql-deploy": "sanity graphql-deploy"
+  },
+  "dependencies": {
+    "sanity": "^3.0.0",
+    "@sanity/vision": "^3.0.0",
+    "styled-components": "^6.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "lucide-react": "^0.300.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  }
+}

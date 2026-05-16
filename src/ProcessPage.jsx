@@ -1,9 +1,35 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { client } from './sanityClient'
 
 export default function ProcessPage({ setCurrentPage }) {
+  const [processSteps, setProcessSteps] = useState([])
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    async function fetchSteps() {
+      try {
+        const data = await client.fetch(`*[_type == "processStep"] | order(order asc)`)
+        if (data && data.length > 0) setProcessSteps(data)
+      } catch (error) {
+        console.error("Error fetching process steps:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchSteps()
   }, [])
+
+  const defaultSteps = [
+    { title: "Consultation", description: "We begin by understanding your project goals, environment, budget, and technical requirements. This allows our team to outline exactly how technology can improve your operational workflows or everyday lifestyle.", image: '/Consultation.jpg' },
+    { title: "Site Assessment", description: "Our team thoroughly evaluates your physical space, existing infrastructure, risks, and performance limitations. This prevents unneeded surprises during physical deployment.", image: '/Site Assessment.jpg' },
+    { title: "System Design", description: "We develop a tailored, compliant system architecture covering advanced equipment choice, placement, network integration, scalability, and bandwidth limit planning.", image: '/System Design.png' },
+    { title: "Installation & Quality Control", description: "Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations. We maintain stringent quality control and assurance at every phase of deployment.", image: '/Installation & Quality Control.png' },
+    { title: "Integration & Testing", description: "We connect all technology components into one working system and test performance, reliability, and usability end-to-end.", image: '/Integration & Testing.png' },
+    { title: "Support & Maintenance", description: "After completion, we provide ongoing support, preventative testing, hardware checks, and continuous technical assistance.", image: '/Support & Maintenance.jpg' }
+  ]
+
+  const displaySteps = processSteps.length > 0 ? processSteps : defaultSteps
 
   return (
     <div className="process-page-container">
@@ -27,71 +53,18 @@ export default function ProcessPage({ setCurrentPage }) {
 
       {/* 3. DETAILED PROCESS SECTIONS */}
       <section className="process-details-section">
-        <div className="process-step-block">
-          <div className="step-content-col">
-            <span className="step-index">#1</span>
-            <h2 className="step-main-title">Consultation</h2>
-            <p className="step-body-desc">
-              We begin by understanding your project goals, environment, budget, and technical requirements. This allows our team to outline exactly how technology can improve your operational workflows or everyday lifestyle.
-            </p>
+        {displaySteps.map((step, idx) => (
+          <div key={idx} className={`process-step-block ${idx % 2 !== 0 ? 'reverse' : ''}`}>
+            <div className="step-content-col">
+              <span className="step-index">#{idx + 1}</span>
+              <h2 className="step-main-title">{step.title}</h2>
+              <p className="step-body-desc">
+                {step.description}
+              </p>
+            </div>
+            <div className="step-visual-col" style={{ backgroundImage: `url('${step.image || '/1-01.webp'}')` }}></div>
           </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Consultation.jpg')` }}></div>
-        </div>
-
-        <div className="process-step-block reverse">
-          <div className="step-content-col">
-            <span className="step-index">#2</span>
-            <h2 className="step-main-title">Site Assessment</h2>
-            <p className="step-body-desc">
-              Our team thoroughly evaluates your physical space, existing infrastructure, risks, and performance limitations. This prevents unneeded surprises during physical deployment.
-            </p>
-          </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Site Assessment.jpg')` }}></div>
-        </div>
-
-        <div className="process-step-block">
-          <div className="step-content-col">
-            <span className="step-index">#3</span>
-            <h2 className="step-main-title">System Design</h2>
-            <p className="step-body-desc">
-              We develop a tailored, compliant system architecture covering advanced equipment choice, placement, network integration, scalability, and bandwidth limit planning.
-            </p>
-          </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/System Design.png')` }}></div>
-        </div>
-
-        <div className="process-step-block reverse">
-          <div className="step-content-col">
-            <span className="step-index">#4</span>
-            <h2 className="step-main-title">Installation & Quality Control</h2>
-            <p className="step-body-desc">
-              Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations. We maintain stringent quality control and assurance at every phase of deployment.
-            </p>
-          </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Installation & Quality Control.png')` }}></div>
-        </div>
-
-        <div className="process-step-block">
-          <div className="step-content-col">
-            <span className="step-index">#5</span>
-            <h2 className="step-main-title">Integration & Testing</h2>
-            <p className="step-body-desc">
-              We connect all technology components into one working system and test performance, reliability, and usability end-to-end.
-            </p>
-          </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Integration & Testing.png')` }}></div>
-        </div>
-
-        <div className="process-step-block reverse">
-          <div className="step-content-col">
-            <span className="step-index">#6</span>
-            <h2 className="step-main-title">Support & Maintenance</h2>
-            <p className="step-body-desc">
-              After completion, we provide ongoing support, preventative testing, hardware checks, and continuous technical assistance.
-            </p>
-          </div>
-          <div className="step-visual-col" style={{ backgroundImage: `url('/Support & Maintenance.jpg')` }}></div>
-        </div>
+        ))}
       </section>
 
       {/* 4. WHAT CLIENTS CAN EXPECT */}

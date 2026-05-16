@@ -1,19 +1,40 @@
 import React, { useEffect, useState } from 'react'
+import { client } from './sanityClient'
 
 export default function SecuritySystemsPage({ setCurrentPage }) {
   const [openOffer, setOpenOffer] = useState(null)
 
+  const [serviceData, setServiceData] = useState(null)
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    async function fetchService() {
+      try {
+        const data = await client.fetch(`*[_type == "service" && slug.current == "service-security"][0]`)
+        if (data) setServiceData(data)
+      } catch (error) {
+        console.error("Error fetching service data:", error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchService()
   }, [])
 
-  const offerings = [
+  const defaultOfferings = [
     { id: 1, title: 'CCTV Surveillance Systems', desc: 'IP cameras with real-time AI analytics, direct recording, and mobile viewing.' },
     { id: 2, title: 'Access Control Systems', desc: 'Biometric and card systems for multi-tier access of physical entry points.' },
     { id: 3, title: 'Intruder Alarm Systems', desc: 'Perimeter motion detection that triggers immediate alerts upon access.' },
     { id: 4, title: 'Video Intercom Systems', desc: 'Clear communication and visitor verification directly at points of access.' },
     { id: 5, title: 'Integrated Security Platforms', desc: 'Centralized control dashboard that tracks all internal security layers.' }
   ]
+
+  const offerings = serviceData?.features ? serviceData.features.map((f, i) => ({
+    id: i + 1,
+    title: f,
+    desc: serviceData.description // Using main desc as fallback or we could have specific feature descs in Sanity
+  })) : defaultOfferings
 
   return (
     <div className="service-detail-page-container security-theme">
