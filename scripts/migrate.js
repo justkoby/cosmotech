@@ -38,7 +38,8 @@ async function migrate() {
   // 2. Migrate Services
   console.log('Migrating Services...')
   for (const svc of data.services) {
-    await client.create({
+    await client.createOrReplace({
+      _id: `service-${svc.route}`,
       _type: 'service',
       title: svc.title,
       description: svc.description,
@@ -50,19 +51,21 @@ async function migrate() {
   // 3. Migrate Projects
   console.log('Migrating Projects...')
   for (const proj of data.projects) {
-    await client.create({
+    await client.createOrReplace({
+      _id: `project-${proj.slug}`,
       _type: 'project',
       title: proj.title,
       category: proj.category,
       slug: { _type: 'slug', current: proj.slug },
-      // Note: Images need to be uploaded separately, this just sets the title/slug
     })
   }
 
   // 4. Migrate FAQs
   console.log('Migrating FAQs...')
-  for (const faq of data.faqs) {
-    await client.create({
+  for (let i = 0; i < data.faqs.length; i++) {
+    const faq = data.faqs[i]
+    await client.createOrReplace({
+      _id: `faq-${i}`,
       _type: 'faq',
       question: faq.q,
       answer: faq.a,
@@ -73,13 +76,25 @@ async function migrate() {
   // 5. Migrate Process Steps
   console.log('Migrating Process Steps...')
   for (const step of data.processSteps) {
-    await client.create({
+    await client.createOrReplace({
+      _id: `process-step-${step.order}`,
       _type: 'processStep',
       order: step.order,
       title: step.title,
       description: step.desc,
     })
   }
+
+  // 6. Migrate Contact Details
+  console.log('Migrating Contact Details...')
+  await client.createOrReplace({
+    _id: 'contactDetails',
+    _type: 'contactDetails',
+    email: data.contactDetails.email,
+    phone: data.contactDetails.phone,
+    address: data.contactDetails.address,
+    officeHours: data.contactDetails.officeHours,
+  })
 
   console.log('Migration complete!')
 }

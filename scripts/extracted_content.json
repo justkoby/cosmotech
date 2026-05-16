@@ -78,5 +78,11 @@
     { "order": 4, "title": "Installation & Quality Control", "desc": "Our certified technicians deploy the approved systems with precision, full safety compliance, and minimal disruption to operations. We maintain stringent quality control and assurance at every phase of deployment." },
     { "order": 5, "title": "Integration & Testing", "desc": "We connect all technology components into one working system and test performance, reliability, and usability end-to-end." },
     { "order": 6, "title": "Support & Maintenance", "desc": "After completion, we provide ongoing support, preventative testing, hardware checks, and continuous technical assistance." }
-  ]
+  ],
+  "contactDetails": {
+    "email": "info@cosmotechprojects.com",
+    "phone": "+233 53 101 8219 / +233 54 550 8808",
+    "address": "Accra Digital Center, Ring Road West, Accra",
+    "officeHours": "Mon - Fri: 8:00 AM - 5:00 PM"
+  }
 }
