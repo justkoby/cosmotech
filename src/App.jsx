@@ -8,6 +8,7 @@ import SecuritySystemsPage from './SecuritySystemsPage'
 import SmartAutomationPage from './SmartAutomationPage'
 import TelecommunicationsPage from './TelecommunicationsPage'
 import FireDetectionPage from './FireDetectionPage'
+import ElectricalInstallationsPage from './ElectricalInstallationsPage'
 import AccraCityHotelPage from './AccraCityHotelPage'
 import BlueValleyPage from './BlueValleyPage'
 import UrbanApartmentsPage from './UrbanApartmentsPage'
@@ -162,6 +163,9 @@ function App() {
     } else if (currentPage === 'smart-assistant') {
       title = "Smart Matcher & Estimate Tool | COSMOTECH Project Ltd"
       desc = "Use our guided virtual assistant to receive exact technology recommendations and quick price estimates."
+    } else if (currentPage === 'service-electrical') {
+      title = "Building Electrical Installations | COSMOTECH Project Ltd"
+      desc = "End-to-end electrical infrastructure for commercial and residential buildings — designed for safety, efficiency, and code compliance."
     }
 
     document.title = title
@@ -211,6 +215,7 @@ function App() {
                     <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-automation'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Smart Automation</a></li>
                     <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-telecoms'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Telecommunications</a></li>
                     <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-fire'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Fire Detection</a></li>
+                    <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-electrical'); setIsMobileMenuOpen(false); window.scrollTo(0,0); }}>Electrical Installations</a></li>
                   </ul>
                 )}
               </li>
@@ -349,6 +354,10 @@ function App() {
                       <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('service-fire'); window.scrollTo(0, 0); }}>
                         <span className="item-bold">Fire Detection</span>
                         <span className="item-desc">High-end enterprise systems</span>
+                      </a>
+                      <a href="#" className="mega-item" onClick={(e) => { e.preventDefault(); setCurrentPage('service-electrical'); window.scrollTo(0, 0); }}>
+                        <span className="item-bold">Electrical Installations</span>
+                        <span className="item-desc">Code-compliant building power</span>
                       </a>
                     </div>
                   </div>
@@ -880,6 +889,10 @@ function App() {
         <FireDetectionPage setCurrentPage={setCurrentPage} />
       )}
 
+      {currentPage === 'service-electrical' && (
+        <ElectricalInstallationsPage setCurrentPage={setCurrentPage} />
+      )}
+
       {currentPage === 'case-study-accra' && (
         <AccraCityHotelPage setCurrentPage={setCurrentPage} />
       )}
@@ -953,6 +966,7 @@ function App() {
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-automation'); window.scrollTo(0, 0); }}>Smart Home Automation</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-telecoms'); window.scrollTo(0, 0); }}>Telecommunications</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-fire'); window.scrollTo(0, 0); }}>Fire Detection</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('service-electrical'); window.scrollTo(0, 0); }}>Electrical Installations</a>
             </div>
 
             <div className="footer-links-col">

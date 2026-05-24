@@ -117,7 +117,7 @@ export default function IndustriesPage({ setCurrentPage }) {
       {/* -------------------- MOBILE PAGE FLOW (lg:hidden) -------------------- */}
       <div className="lg:hidden">
         {/* Screen 1: Hero */}
-        <section style={{ backgroundImage: "linear-gradient(rgba(12, 27, 16, 0.8), rgba(12, 27, 16, 0.9)), url('/2-01.webp')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '60px 20px', color: '#ffffff', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
+        <section style={{ backgroundImage: "linear-gradient(rgba(12, 27, 16, 0.8), rgba(12, 27, 16, 0.9)), url('/2-01.png')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '60px 20px', color: '#ffffff', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
           <div>
             <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', padding: '4px 10px', borderRadius: '4px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Our Sector Expertise</span>
             <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '16px 0', lineHeight: '1.25' }}>Tailored Sector Solutions</h1>
@@ -183,7 +183,7 @@ export default function IndustriesPage({ setCurrentPage }) {
       {/* -------------------- DESKTOP PAGE FLOW (hidden lg:block) -------------------- */}
       <div className="hidden lg:block">
         {/* 1. HERO SECTION */}
-        <section className="industries-hero" style={{ backgroundImage: `url('/2-01.webp')` }}>
+        <section className="industries-hero" style={{ backgroundImage: `url('/2-01.png')` }}>
           <div className="industries-hero-overlay">
             <div className="industries-hero-content">
               <span className="industries-badge-accent">Our Sector Expertise</span>

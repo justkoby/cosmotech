@@ -66,6 +66,13 @@ export default function SearchPage({ setCurrentPage }) {
       keywords: 'fire safety smoke detector heat sensor alarm fire suppression high end enterprise systems safety hazard detection'
     },
     {
+      id: 'service-electrical',
+      title: 'Building Electrical Installations',
+      category: 'Services',
+      description: 'Code-compliant electrical distribution boards, certified power wiring, standby generator backup, and Legrand switches.',
+      keywords: 'electrical installations wiring distribution boards panels power outlets lighting circuits earthing bonding generators ups legrand'
+    },
+    {
       id: 'projects',
       title: 'Projects Portfolio',
       category: 'Projects',

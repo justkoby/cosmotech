@@ -38,6 +38,13 @@ export default function InteractiveServices({ setCurrentPage }) {
       desc: 'Advanced smoke, thermal, and addressable alarm systems that continuously monitor for hazards to protect life and property.',
       image: '/fire safety.png',
       route: 'service-fire'
+    },
+    {
+      category: 'ELECTRICAL INSTALLATIONS',
+      title: 'BUILDING ELECTRICAL INSTALLATIONS',
+      desc: 'Code-compliant electrical distribution boards, certified wiring, backup systems, earthing, and Legrand premium switches.',
+      image: '/electrical-installations.png',
+      route: 'service-electrical'
     }
   ]
 

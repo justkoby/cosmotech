@@ -76,6 +76,11 @@ export default function MobileHomepage({ setCurrentPage }) {
       title: 'Fire Detection',
       desc: 'Rapid hazard notification systems, addressable fire alarms, and continuous coverage.',
       route: 'service-fire'
+    },
+    {
+      title: 'Electrical Installations',
+      desc: 'End-to-end power distribution, certified building wiring, and Legrand backup systems.',
+      route: 'service-electrical'
     }
   ]
 
@@ -109,6 +114,7 @@ export default function MobileHomepage({ setCurrentPage }) {
           <button onClick={() => setCurrentPage('service-automation')}>🏠 Smart Home</button>
           <button onClick={() => setCurrentPage('service-telecoms')}>📞 Telecom</button>
           <button onClick={() => setCurrentPage('service-fire')}>🔥 Fire Safety</button>
+          <button onClick={() => setCurrentPage('service-electrical')}>⚡ Electrical</button>
         </div>
       </section>
 

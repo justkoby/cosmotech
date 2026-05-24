@@ -45,6 +45,12 @@ export default function ServicesPage({ setCurrentPage }) {
       title: 'Fire Detection',
       desc: 'Smart addressable fire alarms, smoke detection, hazard notification, and continuous coverage systems.',
       route: 'service-fire'
+    },
+    {
+      id: 'electrical-installations',
+      title: 'Electrical Installations',
+      desc: 'End-to-end power distribution, certified building wiring, energy backup systems, and code-compliant installations.',
+      route: 'service-electrical'
     }
   ]
 
@@ -201,6 +207,9 @@ export default function ServicesPage({ setCurrentPage }) {
                   } else if (service.id === 'fire-detection') {
                     setCurrentPage('service-fire');
                     window.scrollTo(0, 0);
+                  } else if (service.id === 'electrical-installations') {
+                    setCurrentPage('service-electrical');
+                    window.scrollTo(0, 0);
                   }
                 }}
               >
@@ -236,7 +245,7 @@ export default function ServicesPage({ setCurrentPage }) {
                 Request for Consultation &rarr;
               </button>
             </div>
-            <div className="service-detail-image" style={{ backgroundImage: `url('/2-01.webp')` }}></div>
+            <div className="service-detail-image" style={{ backgroundImage: `url('/2-01.png')` }}></div>
           </div>
 
           {/* Service 2: Telecommunications */}
@@ -324,6 +333,28 @@ export default function ServicesPage({ setCurrentPage }) {
               </button>
             </div>
             <div className="service-detail-image" style={{ backgroundImage: `url('/monarch-hotel.jpg')` }}></div>
+          </div>
+
+          {/* Service 6: Electrical Installations */}
+          <div id="electrical-installations" className="service-detail-block zig-zag alternate">
+            <div className="service-detail-content">
+              <span className="service-badge-tech">Certified & Safe</span>
+              <h2 className="service-detail-title">Building Electrical Installations</h2>
+              <p className="service-detail-desc">
+                We design and deploy robust, code-compliant electrical distribution and wiring infrastructure for modern commercial and residential environments.
+              </p>
+              <ul className="service-detail-list">
+                <li>Distribution Boards & Panels</li>
+                <li>Power Wiring & Socket Outlets</li>
+                <li>Lighting Circuits & LED Fixtures</li>
+                <li>Earthing & Bonding Systems</li>
+                <li>UPS & Standby Generator Integration</li>
+              </ul>
+              <button className="service-detail-cta" onClick={() => { setCurrentPage('consultation'); window.scrollTo(0, 0); }}>
+                Request for Consultation &rarr;
+              </button>
+            </div>
+            <div className="service-detail-image" style={{ backgroundImage: `url('/electrical-installations.png')` }}></div>
           </div>
         </section>
 

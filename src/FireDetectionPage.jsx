@@ -169,7 +169,7 @@ export default function FireDetectionPage({ setCurrentPage }) {
                 Our systems are designed to meet modern safety requirements while integrating seamlessly with your building infrastructure.
               </p>
             </div>
-            <div className="overview-image" style={{ backgroundImage: `url('/2-01.webp')` }}></div>
+            <div className="overview-image" style={{ backgroundImage: `url('/2-01.png')` }}></div>
           </div>
         </section>
 

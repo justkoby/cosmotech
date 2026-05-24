@@ -10,7 +10,7 @@ export default function UrbanApartmentsPage({ setCurrentPage }) {
       {/* -------------------- MOBILE PAGE FLOW (lg:hidden) -------------------- */}
       <div className="lg:hidden">
         {/* Screen 1: Hero */}
-        <section style={{ backgroundImage: "linear-gradient(rgba(12, 27, 16, 0.8), rgba(12, 27, 16, 0.9)), url('/luxury-interior.webp')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '60px 20px', color: '#ffffff', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
+        <section style={{ backgroundImage: "linear-gradient(rgba(12, 27, 16, 0.8), rgba(12, 27, 16, 0.9)), url('/luxury-interior.png')", backgroundSize: 'cover', backgroundPosition: 'center', padding: '60px 20px', color: '#ffffff', minHeight: '75vh', display: 'flex', alignItems: 'center' }}>
           <div>
             <span style={{ backgroundColor: 'rgba(255,255,255,0.15)', color: '#ffffff', padding: '4px 10px', borderRadius: '4px', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 700 }}>Residential</span>
             <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '16px 0', lineHeight: '1.25' }}>The Urban Apartments</h1>
@@ -74,7 +74,7 @@ export default function UrbanApartmentsPage({ setCurrentPage }) {
       {/* -------------------- DESKTOP PAGE FLOW (hidden lg:block) -------------------- */}
       <div className="hidden lg:block">
         {/* 1. HERO SECTION */}
-        <section className="case-hero" style={{ backgroundImage: `url('/luxury-interior.webp')` }}>
+        <section className="case-hero" style={{ backgroundImage: `url('/luxury-interior.png')` }}>
           <div className="case-hero-overlay">
             <div className="case-hero-content">
               <span className="case-badge">Residential</span>
